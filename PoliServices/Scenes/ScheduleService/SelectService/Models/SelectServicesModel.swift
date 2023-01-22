@@ -1,8 +1,16 @@
-struct SelectServicesModel {
+import Foundation
+
+struct SelectServicesModel: Codable {
     
-    let name: String
-    let systemImageName: SystemImageName
-    let imageColor: CustomColor
+    let success: Bool
+    let data: ServicesModel
 }
 
-typealias SelectServices = [SelectServicesModel]
+typealias ServicesModel = [ServiceResponseModel]
+
+struct ServiceResponseModel: Codable {
+    
+    let id: Int
+    let name, icon, color: String
+    let duration: Int
+}

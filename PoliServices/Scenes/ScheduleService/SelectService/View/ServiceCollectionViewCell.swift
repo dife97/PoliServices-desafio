@@ -73,8 +73,8 @@ class ServiceCollectionViewCell: UICollectionViewCell {
     
     func configure(with selectService: SelectServicesModel) {
         
-        serviceNameText = selectService.name
-        serviceImageName = selectService.systemImageName.rawValue
-        serviceImageColor = selectService.imageColor.toUIColor()
+//        serviceNameText = selectService.name
+//        serviceImageName = selectService.systemImageName.rawValue
+//        serviceImageColor = selectService.imageColor.toUIColor()
     }
 }

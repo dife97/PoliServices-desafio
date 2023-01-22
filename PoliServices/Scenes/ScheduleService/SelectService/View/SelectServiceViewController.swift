@@ -106,7 +106,14 @@ extension SelectServiceViewController: SelectServiceViewDelegate {
     
     func didGetSelectServices() {
         
-        selectServiceView.updateSelectServicesCollectionView()
+//        selectServiceView.updateSelectServicesCollectionView()
+        for service in viewModel.services {
+            print(service.name)
+        }
+    }
+    
+    func failedToGetServicesDate() {
+        
     }
 }
 
@@ -130,7 +137,7 @@ extension SelectServiceViewController {
         let selectService = viewModel.services[indexPath.row]
         
         guard let serviceCollectionViewCell = cell as? ServiceCollectionViewCell else { return ServiceCollectionViewCell() }
-        serviceCollectionViewCell.configure(with: selectService)
+//        serviceCollectionViewCell.configure(with: selectService)
         
         return serviceCollectionViewCell
     }

@@ -31,6 +31,16 @@
 		4C55034E29379F3900699589 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C55034D29379F3900699589 /* Assets.xcassets */; };
 		4C55035129379F3900699589 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C55034F29379F3900699589 /* LaunchScreen.storyboard */; };
 		4C5503592937D32A00699589 /* SelectServiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C5503582937D32A00699589 /* SelectServiceViewController.swift */; };
+		60CA6228297C8E550056C56E /* ServiceFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60CA6227297C8E550056C56E /* ServiceFetcher.swift */; };
+		60CA622B297C8F5A0056C56E /* URLSessionProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60CA622A297C8F5A0056C56E /* URLSessionProvider.swift */; };
+		60CA622D297CA81E0056C56E /* NetworkProviderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60CA622C297CA81E0056C56E /* NetworkProviderProtocol.swift */; };
+		60CA622F297CA9BD0056C56E /* ApiRequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60CA622E297CA9BD0056C56E /* ApiRequestProtocol.swift */; };
+		60CA6231297CA9DB0056C56E /* CustomError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60CA6230297CA9DB0056C56E /* CustomError.swift */; };
+		60CA6233297CA9F80056C56E /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60CA6232297CA9F80056C56E /* HTTPMethod.swift */; };
+		60CA6237297CAAE80056C56E /* Data+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60CA6236297CAAE80056C56E /* Data+Extension.swift */; };
+		60CA6239297D95FD0056C56E /* ServiceFetcherRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60CA6238297D95FD0056C56E /* ServiceFetcherRequest.swift */; };
+		60CA623B297D9F9D0056C56E /* URLSessionAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60CA623A297D9F9D0056C56E /* URLSessionAdapter.swift */; };
+		60CA623D297DA08A0056C56E /* URLSessionProviderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60CA623C297DA08A0056C56E /* URLSessionProviderProtocol.swift */; };
 		60CE81AB2977618D009667C5 /* SelectServiceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60CE81AA2977618D009667C5 /* SelectServiceViewModel.swift */; };
 		60CE81AD297761B7009667C5 /* SelectServiceViewModelProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60CE81AC297761B7009667C5 /* SelectServiceViewModelProtocols.swift */; };
 		60CE81AF297767BE009667C5 /* CustomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60CE81AE297767BE009667C5 /* CustomColor.swift */; };
@@ -70,6 +80,16 @@
 		4C55035029379F3900699589 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4C55035229379F3900699589 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4C5503582937D32A00699589 /* SelectServiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectServiceViewController.swift; sourceTree = "<group>"; };
+		60CA6227297C8E550056C56E /* ServiceFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceFetcher.swift; sourceTree = "<group>"; };
+		60CA622A297C8F5A0056C56E /* URLSessionProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionProvider.swift; sourceTree = "<group>"; };
+		60CA622C297CA81E0056C56E /* NetworkProviderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProviderProtocol.swift; sourceTree = "<group>"; };
+		60CA622E297CA9BD0056C56E /* ApiRequestProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRequestProtocol.swift; sourceTree = "<group>"; };
+		60CA6230297CA9DB0056C56E /* CustomError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomError.swift; sourceTree = "<group>"; };
+		60CA6232297CA9F80056C56E /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		60CA6236297CAAE80056C56E /* Data+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Extension.swift"; sourceTree = "<group>"; };
+		60CA6238297D95FD0056C56E /* ServiceFetcherRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceFetcherRequest.swift; sourceTree = "<group>"; };
+		60CA623A297D9F9D0056C56E /* URLSessionAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionAdapter.swift; sourceTree = "<group>"; };
+		60CA623C297DA08A0056C56E /* URLSessionProviderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionProviderProtocol.swift; sourceTree = "<group>"; };
 		60CE81AA2977618D009667C5 /* SelectServiceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectServiceViewModel.swift; sourceTree = "<group>"; };
 		60CE81AC297761B7009667C5 /* SelectServiceViewModelProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectServiceViewModelProtocols.swift; sourceTree = "<group>"; };
 		60CE81AE297767BE009667C5 /* CustomColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColor.swift; sourceTree = "<group>"; };
@@ -214,6 +234,7 @@
 				60CE81B0297768BB009667C5 /* Models */,
 				60CE81A829776155009667C5 /* View */,
 				60CE81A92977615E009667C5 /* ViewModel */,
+				60CA6229297C8EF90056C56E /* Network */,
 			);
 			path = SelectService;
 			sourceTree = "<group>";
@@ -255,12 +276,44 @@
 			children = (
 				60CE81A7297760CB009667C5 /* Resources */,
 				4BCB961629565F2800B15A58 /* Scenes */,
+				60CA6226297C8E370056C56E /* Network */,
 				4BCB96202956767900B15A58 /* DateManager */,
 				4B6F4B7E295783BB00D67D79 /* CustomTImer */,
 				4B7AE5A9296B460B0060AD41 /* Infrastructure */,
 				4C55035229379F3900699589 /* Info.plist */,
 			);
 			path = PoliServices;
+			sourceTree = "<group>";
+		};
+		60CA6226297C8E370056C56E /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				60CA622C297CA81E0056C56E /* NetworkProviderProtocol.swift */,
+				60CA622E297CA9BD0056C56E /* ApiRequestProtocol.swift */,
+				60CA6230297CA9DB0056C56E /* CustomError.swift */,
+				60CA6232297CA9F80056C56E /* HTTPMethod.swift */,
+				60CA623E297DA0A90056C56E /* URLSessionProvider */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		60CA6229297C8EF90056C56E /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				60CA6227297C8E550056C56E /* ServiceFetcher.swift */,
+				60CA6238297D95FD0056C56E /* ServiceFetcherRequest.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		60CA623E297DA0A90056C56E /* URLSessionProvider */ = {
+			isa = PBXGroup;
+			children = (
+				60CA623C297DA08A0056C56E /* URLSessionProviderProtocol.swift */,
+				60CA623A297D9F9D0056C56E /* URLSessionAdapter.swift */,
+				60CA622A297C8F5A0056C56E /* URLSessionProvider.swift */,
+			);
+			path = URLSessionProvider;
 			sourceTree = "<group>";
 		};
 		60CE81A7297760CB009667C5 /* Resources */ = {
@@ -337,6 +390,7 @@
 		60CE81C129778B5F009667C5 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				60CA6236297CAAE80056C56E /* Data+Extension.swift */,
 				60CE81C229778B78009667C5 /* Date+Extension.swift */,
 				4B94CE78296B50C500144E87 /* UIColor+Extension.swift */,
 			);
@@ -414,6 +468,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				60CA6233297CA9F80056C56E /* HTTPMethod.swift in Sources */,
 				4BF27F24296BA24E0097637D /* SelectDateView.swift in Sources */,
 				60CE81BE29777EC2009667C5 /* SelectDateViewModel.swift in Sources */,
 				60CE81B2297768C6009667C5 /* SelectServicesModel.swift in Sources */,
@@ -424,21 +479,30 @@
 				4C30F0A829391842002C3068 /* SelectDateViewController.swift in Sources */,
 				4BCB961F2956602700B15A58 /* HomeViewModelProtocols.swift in Sources */,
 				60CE81C0297784D1009667C5 /* ScheduledServiceModel.swift in Sources */,
+				60CA622B297C8F5A0056C56E /* URLSessionProvider.swift in Sources */,
 				60CE81C329778B78009667C5 /* Date+Extension.swift in Sources */,
 				4BCB961D29565FF400B15A58 /* HomeViewModel.swift in Sources */,
 				60CE81B529776FF0009667C5 /* SystemImageName.swift in Sources */,
 				4C55034929379F3600699589 /* HomeViewController.swift in Sources */,
+				60CA623D297DA08A0056C56E /* URLSessionProviderProtocol.swift in Sources */,
 				4B20FF97295697DB0038955D /* ServiceModel.swift in Sources */,
+				60CA6228297C8E550056C56E /* ServiceFetcher.swift in Sources */,
 				4BF27F28296BA9ED0097637D /* ServiceCollectionViewCell.swift in Sources */,
+				60CA6239297D95FD0056C56E /* ServiceFetcherRequest.swift in Sources */,
+				60CA6237297CAAE80056C56E /* Data+Extension.swift in Sources */,
 				4B15571C296B746C001C8C7F /* CustomImageView.swift in Sources */,
 				4B94CE79296B50C500144E87 /* UIColor+Extension.swift in Sources */,
 				4B15571E296B7B0D001C8C7F /* CustomButton.swift in Sources */,
 				60CE81BC29777EB1009667C5 /* SelectDateViewModelProtocols.swift in Sources */,
 				60CE81B729777572009667C5 /* CustomColorAdapter.swift in Sources */,
+				60CA622D297CA81E0056C56E /* NetworkProviderProtocol.swift in Sources */,
+				60CA622F297CA9BD0056C56E /* ApiRequestProtocol.swift in Sources */,
 				60CE81AF297767BE009667C5 /* CustomColor.swift in Sources */,
+				60CA623B297D9F9D0056C56E /* URLSessionAdapter.swift in Sources */,
 				4B94CE7D296B56B700144E87 /* LastServiceView.swift in Sources */,
 				4B94CE7B296B52F700144E87 /* CustomDividerView.swift in Sources */,
 				4C55034529379F3600699589 /* AppDelegate.swift in Sources */,
+				60CA6231297CA9DB0056C56E /* CustomError.swift in Sources */,
 				4BF27F26296BA2A00097637D /* SelectServiceView.swift in Sources */,
 				4B5F6C902969C54B00F1D14B /* DescriptionModel.swift in Sources */,
 				4C5503592937D32A00699589 /* SelectServiceViewController.swift in Sources */,

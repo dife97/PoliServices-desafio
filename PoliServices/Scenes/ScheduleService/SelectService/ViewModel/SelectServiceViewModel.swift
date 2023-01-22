@@ -1,27 +1,37 @@
 class SelectServiceViewModel: SelectServiceViewModelProtocol {
     
-    var services: SelectServices = []
+    var serviceFetcher: ServiceFetcherProtocol
+    
+    init(serviceFetcher: ServiceFetcherProtocol) {
+        self.serviceFetcher = serviceFetcher
+    }
+    
+    var services: ServicesModel = []
     
     weak var delegate: SelectServiceViewDelegate?
     
     func getServices() {
         
-        services.append(createSelectService(name: "Código",
-                                            systemImageName: .pencil,
-                                            imageColor: .cyan))
-        
-        services.append(createSelectService(name: "Carreira",
-                                            systemImageName: .graduationCap,
-                                            imageColor: .green))
-        
-        services.append(createSelectService(name: "Entrevista",
-                                            systemImageName: .books,
-                                            imageColor: .magenta))
-        
-        services.append(createSelectService(name: "Feedback",
-                                            systemImageName: .scribble,
-                                            imageColor: .brown))
-        
-        delegate?.didGetSelectServices()
+        serviceFetcher.getServices { [weak self] result in
+            
+            guard let self else { return }
+            
+            switch result {
+            case .success(let data):
+                
+                guard let services = data.decode(to: SelectServicesModel.self)?.data else {
+                    self.delegate?.failedToGetServicesDate()
+                    
+                    return
+                }
+                
+                self.services = services
+                
+                self.delegate?.didGetSelectServices()
+            case .failure(_):
+                
+                fatalError()
+            }
+        }
     }
 }

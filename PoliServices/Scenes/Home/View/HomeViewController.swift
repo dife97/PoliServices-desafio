@@ -83,16 +83,20 @@ class HomeViewController: UIViewController {
     
     func selectServiceNavigationControllerFactory() -> UINavigationController {
         
-        let selectServiceViewModel = SelectServiceViewModel()
+        let provider = URLSessionProvider()
         
-        let selectServiceViewController = SelectServiceViewController(viewModel: selectServiceViewModel)
+        let serviceFetcher = ServiceFetcher(provider: provider)
         
-        selectServiceViewModel.delegate = selectServiceViewController
+        let viewModel = SelectServiceViewModel(serviceFetcher: serviceFetcher)
         
-        let selectServiceNavigationController = UINavigationController(rootViewController: selectServiceViewController)
-        selectServiceNavigationController.modalPresentationStyle = .fullScreen
+        let viewController = SelectServiceViewController(viewModel: viewModel)
         
-        return selectServiceNavigationController
+        viewModel.delegate = viewController
+        
+        let navigationController = UINavigationController(rootViewController: viewController)
+        navigationController.modalPresentationStyle = .fullScreen
+        
+        return navigationController
     }
 }
 

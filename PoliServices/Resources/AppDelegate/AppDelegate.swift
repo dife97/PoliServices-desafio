@@ -12,24 +12,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
     
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication,
+                     didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = homeNavigationControllerFactory()
+        window?.rootViewController = homeFactory()
         window?.makeKeyAndVisible()
         
         return true
     }
     
-    private func homeNavigationControllerFactory() -> UINavigationController {
+    private func homeFactory() -> UINavigationController {
         
-        let homeViewModel = HomeViewModel()
-        
+        let currentDateProvider = FoundationCurrentDateProvider()
+        let currentDate = CurrentDateUseCase(currentDateProviders: currentDateProvider)
+        let homeViewModel = HomeViewModel(currentDate: currentDate)
         let homeViewController = HomeViewController(viewModel: homeViewModel)
-        homeViewModel.scheduledServiceDelegate = homeViewController
-        
-        let homeNavigationController = UINavigationController(rootViewController: homeViewController)
-        
-        return homeNavigationController
+
+        return UINavigationController(rootViewController: homeViewController)
     }
 }

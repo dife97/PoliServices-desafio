@@ -2,9 +2,9 @@ import UIKit
 
 class HomeView: UIView {
     
-    var dateLabelText: String? {
+    var currentDateLabelText: String? {
         didSet {
-            currentDateLabel.text = dateLabelText
+            currentDateLabel.text = currentDateLabelText
         }
     }
     
@@ -32,7 +32,7 @@ class HomeView: UIView {
                                                 size: 32,
                                                 weight: .bold)
     
-    private lazy var currentDateLabel = CustomLabel(text: "1 de janeiro de 2023",
+    private lazy var currentDateLabel = CustomLabel(text: "31 de dezembro de 1999",
                                                     size: 13,
                                                     weight: .thin,
                                                     textColor: .darkGray)
@@ -62,8 +62,7 @@ class HomeView: UIView {
     
     private lazy var newServiceButton: CustomButton = {
         let button = CustomButton(title: "Solicitar novo serviço")
-        
-        button.alpha = 0
+
         button.action = { [unowned self] in
             
             self.serviceButtonAction?()

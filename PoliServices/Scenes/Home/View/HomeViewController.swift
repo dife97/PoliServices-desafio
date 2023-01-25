@@ -23,7 +23,6 @@ class HomeViewController: UIViewController {
     
     private lazy var homeView: HomeView = {
         let view = HomeView()
-        
         view.serviceButtonAction = { [unowned self] in
             
             self.didTapNewServiceButton()
@@ -61,8 +60,7 @@ class HomeViewController: UIViewController {
     private func configureCurrentDate() {
         
         viewModel.getCurrentDate { [unowned self] currentDate in
-            
-            self.homeView.dateLabelText = currentDate
+            self.homeView.currentDateLabelText = currentDate
         }
     }
     
@@ -77,41 +75,41 @@ class HomeViewController: UIViewController {
     private func didTapNewServiceButton() {
         
         let selectServiceNavigationController = selectServiceNavigationControllerFactory()
-        
+
         show(selectServiceNavigationController, sender: self)
     }
     
     func selectServiceNavigationControllerFactory() -> UINavigationController {
         
         let provider = URLSessionProvider()
-        
+
         let serviceFetcher = ServiceFetcher(provider: provider)
-        
+
         let viewModel = SelectServiceViewModel(serviceFetcher: serviceFetcher)
-        
+
         let viewController = SelectServiceViewController(viewModel: viewModel)
-        
+
         viewModel.delegate = viewController
-        
+
         let navigationController = UINavigationController(rootViewController: viewController)
         navigationController.modalPresentationStyle = .fullScreen
-        
+
         return navigationController
     }
 }
 
 extension HomeViewController: ScheduledServiceDelegate {
-    
+
     func didGetScheduledService(service: ServiceModel) {
-        
+
         homeView.serviceNameText = service.serviceName
         homeView.serviceDateText = service.serviceDate
-        
+
         homeView.configureServiceView(hasService: true)
     }
-    
+
     func noScheduledService() {
-        
+
         homeView.configureServiceView(hasService: false)
     }
 }

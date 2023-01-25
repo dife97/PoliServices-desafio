@@ -2,17 +2,20 @@ import Foundation
 
 class HomeViewModel: HomeViewModelProtocol {
     
-    weak var scheduledServiceDelegate: ScheduledServiceDelegate?
+    var currentDate: CurrentDateUseCaseProtocol
     
-    var dateManager: DateManagerProtocol = DateManager()
+    init(currentDate: CurrentDateUseCaseProtocol) {
+        self.currentDate = currentDate
+    }
+    
+    weak var scheduledServiceDelegate: ScheduledServiceDelegate?
     
     var customTimer: CustomTimerProtocol = CustomTimer()
     
-    func getCurrentDate(_ completion: (String) -> Void) {
+    func getCurrentDate(onComplete: @escaping  (String) -> Void) {
         
-        dateManager.getCurrentDate { date in
-            
-            completion(date)
+        currentDate.getCurrentDate(with: .fullDate) { currentDate in
+            onComplete(currentDate)
         }
     }
     

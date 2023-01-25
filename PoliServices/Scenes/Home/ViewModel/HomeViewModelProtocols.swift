@@ -1,13 +1,15 @@
 protocol HomeViewModelProtocol: ScheduledServiceProtocol {
     
-    var dateManager: DateManagerProtocol { get }
+    // MARK: - CurrentDate
+    var currentDate: CurrentDateUseCaseProtocol { get }
     
+    func getCurrentDate(onComplete: @escaping  (String) -> Void)
+    
+    // MARK: - Timer
     var customTimer: CustomTimerProtocol { get }
-    
-    func getCurrentDate(_ completion: (String) -> Void)
-    
+
     func getDescriptionLabel(_ completion: (String) -> Void)
-    
+
     func startTimer()
 }
 

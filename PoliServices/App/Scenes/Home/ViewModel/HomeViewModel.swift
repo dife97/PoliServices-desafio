@@ -2,20 +2,30 @@ import Foundation
 
 class HomeViewModel: HomeViewModelProtocol {
     
-    var currentDate: CurrentDateUseCaseProtocol
+    weak var delegate: HomeViewModelDelegate?
     
-    init(currentDate: CurrentDateUseCaseProtocol) {
-        self.currentDate = currentDate
+    var currentDate: CurrentDate
+    
+    init(currentDateProvider: CurrentDate) {
+        self.currentDate = currentDateProvider
     }
     
     weak var scheduledServiceDelegate: ScheduledServiceDelegate?
     
     var customTimer: CustomTimerProtocol = CustomTimer()
     
-    func getCurrentDate(onComplete: @escaping  (String) -> Void) {
+    func getCurrentDate() {
         
-        currentDate.getCurrentDate(with: .fullDate) { currentDate in
-            onComplete(currentDate)
+        currentDate.getCurrentDate { [unowned self] currentDate in
+            
+            guard let currentDate else {
+                self.delegate?.failedToGetCurrentDate()
+                return
+            }
+            
+            let currentDateString = "\(currentDate.day) de \(currentDate.month) de \(currentDate.year)"
+            
+            self.delegate?.didGet(currentDateString)
         }
     }
     

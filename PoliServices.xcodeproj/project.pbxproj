@@ -30,11 +30,12 @@
 		4C55034E29379F3900699589 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C55034D29379F3900699589 /* Assets.xcassets */; };
 		4C55035129379F3900699589 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C55034F29379F3900699589 /* LaunchScreen.storyboard */; };
 		4C5503592937D32A00699589 /* SelectServiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C5503582937D32A00699589 /* SelectServiceViewController.swift */; };
-		607487AC2981E04500009F02 /* CurrentDateUseCaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607487AB2981E04500009F02 /* CurrentDateUseCaseProtocol.swift */; };
-		607487AE2981E04E00009F02 /* CurrentDateProviderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607487AD2981E04E00009F02 /* CurrentDateProviderProtocol.swift */; };
-		607487B12981E08900009F02 /* DateFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607487B02981E08900009F02 /* DateFormat.swift */; };
-		607487B42981E17800009F02 /* CurrentDateProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607487B32981E17800009F02 /* CurrentDateProvider.swift */; };
-		607487B62981E1A000009F02 /* CurrentDateUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607487B52981E1A000009F02 /* CurrentDateUseCase.swift */; };
+		607487AC2981E04500009F02 /* CurrentDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607487AB2981E04500009F02 /* CurrentDate.swift */; };
+		607487B12981E08900009F02 /* CurrentDateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607487B02981E08900009F02 /* CurrentDateModel.swift */; };
+		607487B62981E1A000009F02 /* FoundationCurrentDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607487B52981E1A000009F02 /* FoundationCurrentDate.swift */; };
+		607487BA2981EB3F00009F02 /* AvailablePoliServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607487B92981EB3F00009F02 /* AvailablePoliServices.swift */; };
+		607487BF2981ED7600009F02 /* PoliServiceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607487BE2981ED7600009F02 /* PoliServiceModel.swift */; };
+		607487F52982049A00009F02 /* RemoteAvailablePoliServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607487F42982049A00009F02 /* RemoteAvailablePoliServices.swift */; };
 		60CA6228297C8E550056C56E /* ServiceFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60CA6227297C8E550056C56E /* ServiceFetcher.swift */; };
 		60CA622B297C8F5A0056C56E /* URLSessionProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60CA622A297C8F5A0056C56E /* URLSessionProvider.swift */; };
 		60CA622D297CA81E0056C56E /* NetworkProviderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60CA622C297CA81E0056C56E /* NetworkProviderProtocol.swift */; };
@@ -83,11 +84,12 @@
 		4C55035029379F3900699589 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4C55035229379F3900699589 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4C5503582937D32A00699589 /* SelectServiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectServiceViewController.swift; sourceTree = "<group>"; };
-		607487AB2981E04500009F02 /* CurrentDateUseCaseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentDateUseCaseProtocol.swift; sourceTree = "<group>"; };
-		607487AD2981E04E00009F02 /* CurrentDateProviderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentDateProviderProtocol.swift; sourceTree = "<group>"; };
-		607487B02981E08900009F02 /* DateFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormat.swift; sourceTree = "<group>"; };
-		607487B32981E17800009F02 /* CurrentDateProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentDateProvider.swift; sourceTree = "<group>"; };
-		607487B52981E1A000009F02 /* CurrentDateUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentDateUseCase.swift; sourceTree = "<group>"; };
+		607487AB2981E04500009F02 /* CurrentDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentDate.swift; sourceTree = "<group>"; };
+		607487B02981E08900009F02 /* CurrentDateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentDateModel.swift; sourceTree = "<group>"; };
+		607487B52981E1A000009F02 /* FoundationCurrentDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoundationCurrentDate.swift; sourceTree = "<group>"; };
+		607487B92981EB3F00009F02 /* AvailablePoliServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailablePoliServices.swift; sourceTree = "<group>"; };
+		607487BE2981ED7600009F02 /* PoliServiceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoliServiceModel.swift; sourceTree = "<group>"; };
+		607487F42982049A00009F02 /* RemoteAvailablePoliServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteAvailablePoliServices.swift; sourceTree = "<group>"; };
 		60CA6227297C8E550056C56E /* ServiceFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceFetcher.swift; sourceTree = "<group>"; };
 		60CA622A297C8F5A0056C56E /* URLSessionProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionProvider.swift; sourceTree = "<group>"; };
 		60CA622C297CA81E0056C56E /* NetworkProviderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProviderProtocol.swift; sourceTree = "<group>"; };
@@ -121,12 +123,12 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4B6F4B7E295783BB00D67D79 /* CustomTImer */ = {
+		4B6F4B7E295783BB00D67D79 /* CustomTimer */ = {
 			isa = PBXGroup;
 			children = (
 				4B6F4B7F295783CE00D67D79 /* CustomTimer.swift */,
 			);
-			path = CustomTImer;
+			path = CustomTimer;
 			sourceTree = "<group>";
 		};
 		4B7AE5A6296B425C0060AD41 /* View */ = {
@@ -143,8 +145,8 @@
 		4B7AE5A7296B42660060AD41 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				4BCB961C29565FF400B15A58 /* HomeViewModel.swift */,
 				4BCB961E2956602700B15A58 /* HomeViewModelProtocols.swift */,
+				4BCB961C29565FF400B15A58 /* HomeViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -258,9 +260,7 @@
 		4BCB96202956767900B15A58 /* CurrentDate */ = {
 			isa = PBXGroup;
 			children = (
-				607487AA2981E03400009F02 /* UseCase */,
-				607487B22981E13900009F02 /* Provider */,
-				607487AF2981E07F00009F02 /* Model */,
+				607487B52981E1A000009F02 /* FoundationCurrentDate.swift */,
 			);
 			path = CurrentDate;
 			sourceTree = "<group>";
@@ -284,41 +284,92 @@
 		4C55034329379F3600699589 /* PoliServices */ = {
 			isa = PBXGroup;
 			children = (
-				60CE81A7297760CB009667C5 /* Resources */,
-				4BCB961629565F2800B15A58 /* Scenes */,
+				601B784D2985BB7100BFAA98 /* Domain */,
+				601B78512985BB9E00BFAA98 /* Data */,
+				60CE81A7297760CB009667C5 /* App */,
 				60CA6226297C8E370056C56E /* Network */,
-				4BCB96202956767900B15A58 /* CurrentDate */,
-				4B6F4B7E295783BB00D67D79 /* CustomTImer */,
+				607487B72981EAFC00009F02 /* AvailablePoliServices */,
+				607487F62982110F00009F02 /* URLSessionClient */,
+				4B6F4B7E295783BB00D67D79 /* CustomTimer */,
 				4B7AE5A9296B460B0060AD41 /* Infrastructure */,
 				4C55035229379F3900699589 /* Info.plist */,
 			);
 			path = PoliServices;
 			sourceTree = "<group>";
 		};
-		607487AA2981E03400009F02 /* UseCase */ = {
+		601B784D2985BB7100BFAA98 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-				607487AB2981E04500009F02 /* CurrentDateUseCaseProtocol.swift */,
-				607487B52981E1A000009F02 /* CurrentDateUseCase.swift */,
+				601B78502985BB8A00BFAA98 /* Models */,
+				601B784E2985BB7700BFAA98 /* UseCases */,
 			);
-			path = UseCase;
+			path = Domain;
 			sourceTree = "<group>";
 		};
-		607487AF2981E07F00009F02 /* Model */ = {
+		601B784E2985BB7700BFAA98 /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
-				607487B02981E08900009F02 /* DateFormat.swift */,
+				601B784F2985BB7E00BFAA98 /* CurrentDate */,
 			);
-			path = Model;
+			path = UseCases;
 			sourceTree = "<group>";
 		};
-		607487B22981E13900009F02 /* Provider */ = {
+		601B784F2985BB7E00BFAA98 /* CurrentDate */ = {
 			isa = PBXGroup;
 			children = (
-				607487AD2981E04E00009F02 /* CurrentDateProviderProtocol.swift */,
-				607487B32981E17800009F02 /* CurrentDateProvider.swift */,
+				607487AB2981E04500009F02 /* CurrentDate.swift */,
 			);
-			path = Provider;
+			path = CurrentDate;
+			sourceTree = "<group>";
+		};
+		601B78502985BB8A00BFAA98 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				607487B02981E08900009F02 /* CurrentDateModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		601B78512985BB9E00BFAA98 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				4BCB96202956767900B15A58 /* CurrentDate */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		607487B72981EAFC00009F02 /* AvailablePoliServices */ = {
+			isa = PBXGroup;
+			children = (
+				607487B82981EB2D00009F02 /* Domain_UseCase */,
+				607487F32982042F00009F02 /* Data_ImplementationOfUseCase */,
+			);
+			path = AvailablePoliServices;
+			sourceTree = "<group>";
+		};
+		607487B82981EB2D00009F02 /* Domain_UseCase */ = {
+			isa = PBXGroup;
+			children = (
+				607487B92981EB3F00009F02 /* AvailablePoliServices.swift */,
+				607487BE2981ED7600009F02 /* PoliServiceModel.swift */,
+			);
+			path = Domain_UseCase;
+			sourceTree = "<group>";
+		};
+		607487F32982042F00009F02 /* Data_ImplementationOfUseCase */ = {
+			isa = PBXGroup;
+			children = (
+				607487F42982049A00009F02 /* RemoteAvailablePoliServices.swift */,
+			);
+			path = Data_ImplementationOfUseCase;
+			sourceTree = "<group>";
+		};
+		607487F62982110F00009F02 /* URLSessionClient */ = {
+			isa = PBXGroup;
+			children = (
+				60CA623A297D9F9D0056C56E /* URLSessionAdapter.swift */,
+			);
+			path = URLSessionClient;
 			sourceTree = "<group>";
 		};
 		60CA6226297C8E370056C56E /* Network */ = {
@@ -346,20 +397,20 @@
 			isa = PBXGroup;
 			children = (
 				60CA623C297DA08A0056C56E /* URLSessionProviderProtocol.swift */,
-				60CA623A297D9F9D0056C56E /* URLSessionAdapter.swift */,
 				60CA622A297C8F5A0056C56E /* URLSessionProvider.swift */,
 			);
 			path = URLSessionProvider;
 			sourceTree = "<group>";
 		};
-		60CE81A7297760CB009667C5 /* Resources */ = {
+		60CE81A7297760CB009667C5 /* App */ = {
 			isa = PBXGroup;
 			children = (
 				4BCB961B29565FC400B15A58 /* AppDelegate */,
+				4BCB961629565F2800B15A58 /* Scenes */,
 				4C55034D29379F3900699589 /* Assets.xcassets */,
 				4C55034F29379F3900699589 /* LaunchScreen.storyboard */,
 			);
-			path = Resources;
+			path = App;
 			sourceTree = "<group>";
 		};
 		60CE81A829776155009667C5 /* View */ = {
@@ -510,12 +561,12 @@
 				60CE81B2297768C6009667C5 /* SelectServicesModel.swift in Sources */,
 				4B6F4B80295783CE00D67D79 /* CustomTimer.swift in Sources */,
 				4B7AE5AD296B46230060AD41 /* CustomLabel.swift in Sources */,
+				607487BA2981EB3F00009F02 /* AvailablePoliServices.swift in Sources */,
 				4B7AE5A5296B42160060AD41 /* HomeView.swift in Sources */,
 				60CE81AB2977618D009667C5 /* SelectServiceViewModel.swift in Sources */,
-				607487B12981E08900009F02 /* DateFormat.swift in Sources */,
+				607487B12981E08900009F02 /* CurrentDateModel.swift in Sources */,
 				4C30F0A829391842002C3068 /* SelectDateViewController.swift in Sources */,
 				4BCB961F2956602700B15A58 /* HomeViewModelProtocols.swift in Sources */,
-				607487AE2981E04E00009F02 /* CurrentDateProviderProtocol.swift in Sources */,
 				60CE81C0297784D1009667C5 /* ScheduledServiceModel.swift in Sources */,
 				60CA622B297C8F5A0056C56E /* URLSessionProvider.swift in Sources */,
 				60CE81C329778B78009667C5 /* Date+Extension.swift in Sources */,
@@ -530,8 +581,8 @@
 				60CA6237297CAAE80056C56E /* Data+Extension.swift in Sources */,
 				4B15571C296B746C001C8C7F /* CustomImageView.swift in Sources */,
 				4B94CE79296B50C500144E87 /* UIColor+Extension.swift in Sources */,
-				607487B42981E17800009F02 /* CurrentDateProvider.swift in Sources */,
-				607487B62981E1A000009F02 /* CurrentDateUseCase.swift in Sources */,
+				607487F52982049A00009F02 /* RemoteAvailablePoliServices.swift in Sources */,
+				607487B62981E1A000009F02 /* FoundationCurrentDate.swift in Sources */,
 				4B15571E296B7B0D001C8C7F /* CustomButton.swift in Sources */,
 				60CE81BC29777EB1009667C5 /* SelectDateViewModelProtocols.swift in Sources */,
 				60CE81B729777572009667C5 /* CustomColorAdapter.swift in Sources */,
@@ -543,10 +594,11 @@
 				4B94CE7B296B52F700144E87 /* CustomDividerView.swift in Sources */,
 				4C55034529379F3600699589 /* AppDelegate.swift in Sources */,
 				60CA6231297CA9DB0056C56E /* CustomError.swift in Sources */,
+				607487BF2981ED7600009F02 /* PoliServiceModel.swift in Sources */,
 				4BF27F26296BA2A00097637D /* SelectServiceView.swift in Sources */,
 				4B5F6C902969C54B00F1D14B /* DescriptionModel.swift in Sources */,
 				4C5503592937D32A00699589 /* SelectServiceViewController.swift in Sources */,
-				607487AC2981E04500009F02 /* CurrentDateUseCaseProtocol.swift in Sources */,
+				607487AC2981E04500009F02 /* CurrentDate.swift in Sources */,
 				4B20FF99295697F20038955D /* ServiceKeys.swift in Sources */,
 				4B94CE76296B4D7700144E87 /* DescriptionView.swift in Sources */,
 				60CE81AD297761B7009667C5 /* SelectServiceViewModelProtocols.swift in Sources */,

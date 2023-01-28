@@ -1,9 +1,11 @@
 protocol HomeViewModelProtocol: ScheduledServiceProtocol {
     
-    // MARK: - CurrentDate
-    var currentDate: CurrentDateUseCaseProtocol { get }
+    // MARK: - Delegate
+    var delegate: HomeViewModelDelegate? { get }
     
-    func getCurrentDate(onComplete: @escaping  (String) -> Void)
+    // MARK: - CurrentDate
+    var currentDate: CurrentDate { get }
+    func getCurrentDate()
     
     // MARK: - Timer
     var customTimer: CustomTimerProtocol { get }
@@ -11,6 +13,13 @@ protocol HomeViewModelProtocol: ScheduledServiceProtocol {
     func getDescriptionLabel(_ completion: (String) -> Void)
 
     func startTimer()
+}
+
+protocol HomeViewModelDelegate: AnyObject {
+    
+    // MARK: - CurrentDate
+    func didGet(_ currentDate: String)
+    func failedToGetCurrentDate()
 }
 
 

@@ -50,24 +50,14 @@ class HomeViewController: UIViewController {
     
     private func configureView() {
         
-        configureCurrentDate()
-        
+        viewModel.getCurrentDate()
         configureDescriptionLabel()
-        
         viewModel.startTimer()
-    }
-    
-    private func configureCurrentDate() {
-        
-        viewModel.getCurrentDate { [unowned self] currentDate in
-            self.homeView.currentDateLabelText = currentDate
-        }
     }
     
     private func configureDescriptionLabel() {
         
         viewModel.getDescriptionLabel { [unowned self] descriptionText in
-            
             self.homeView.descriptionText = descriptionText
         }
     }
@@ -75,20 +65,15 @@ class HomeViewController: UIViewController {
     private func didTapNewServiceButton() {
         
         let selectServiceNavigationController = selectServiceNavigationControllerFactory()
-
         show(selectServiceNavigationController, sender: self)
     }
     
     func selectServiceNavigationControllerFactory() -> UINavigationController {
         
         let provider = URLSessionProvider()
-
         let serviceFetcher = ServiceFetcher(provider: provider)
-
         let viewModel = SelectServiceViewModel(serviceFetcher: serviceFetcher)
-
         let viewController = SelectServiceViewController(viewModel: viewModel)
-
         viewModel.delegate = viewController
 
         let navigationController = UINavigationController(rootViewController: viewController)
@@ -98,13 +83,23 @@ class HomeViewController: UIViewController {
     }
 }
 
+extension HomeViewController: HomeViewModelDelegate {
+    
+    func didGet(_ currentDate: String) {
+        homeView.currentDateLabelText = currentDate
+    }
+    
+    func failedToGetCurrentDate() {
+        homeView.currentDateLabelText = ""
+    }
+}
+
 extension HomeViewController: ScheduledServiceDelegate {
 
     func didGetScheduledService(service: ServiceModel) {
 
         homeView.serviceNameText = service.serviceName
         homeView.serviceDateText = service.serviceDate
-
         homeView.configureServiceView(hasService: true)
     }
 

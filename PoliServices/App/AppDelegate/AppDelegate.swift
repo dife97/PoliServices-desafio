@@ -24,11 +24,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     private func homeFactory() -> UINavigationController {
         
-        let currentDateProvider = FoundationCurrentDateProvider()
-        let currentDate = CurrentDateUseCase(currentDateProviders: currentDateProvider)
-        let homeViewModel = HomeViewModel(currentDate: currentDate)
+        let currentDateProvider = FoundationCurrentDate()
+        let homeViewModel = HomeViewModel(currentDateProvider: currentDateProvider)
         let homeViewController = HomeViewController(viewModel: homeViewModel)
-
+        homeViewModel.delegate = homeViewController
+        
         return UINavigationController(rootViewController: homeViewController)
     }
 }

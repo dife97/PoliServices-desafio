@@ -1,13 +1,13 @@
 import Foundation
 
 class URLSessionProvider: URLSessionProviderProtocol {
-    
+
     var urlSession: URLSession
-    
+
     init(urlSession: URLSession = URLSession.shared) {
         self.urlSession = urlSession
     }
-    
+
     func load(_ request: ApiRequestProtocol, onComplete: @escaping (Result<Data, CustomError>) -> Void) {
 
         guard let request = createURLRequest(from: request) else {

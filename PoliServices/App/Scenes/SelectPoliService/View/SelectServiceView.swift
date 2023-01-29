@@ -5,13 +5,10 @@ class SelectServiceView: UIView {
     private lazy var selectServiceCollectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewLayout())
         let layout = UICollectionViewFlowLayout()
-        
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.backgroundColor = .none
-        
         layout.scrollDirection = .vertical
         collectionView.setCollectionViewLayout(layout, animated: true)
-        
         collectionView.register(ServiceCollectionViewCell.self, forCellWithReuseIdentifier: ServiceCollectionViewCell.identifier)
         
         return collectionView
@@ -28,14 +25,11 @@ class SelectServiceView: UIView {
     }
     
     private func configureView() {
-        
         configureSelectServiceCollectionView()
-        
         additionalConfiguration()
     }
     
     private func configureSelectServiceCollectionView() {
-        
         addSubview(selectServiceCollectionView)
         
         NSLayoutConstraint.activate([
@@ -47,18 +41,15 @@ class SelectServiceView: UIView {
     }
     
     private func additionalConfiguration() {
-        
         backgroundColor = .mainBackground
     }
     
     func configureCollectionView(delegate: UICollectionViewDelegate, dataSource: UICollectionViewDataSource) {
-        
         selectServiceCollectionView.delegate = delegate
         selectServiceCollectionView.dataSource = dataSource
     }
     
     func updateSelectServicesCollectionView() {
-        
         selectServiceCollectionView.reloadData()
     }
 }

@@ -6,15 +6,19 @@ class ServiceCollectionViewCell: UICollectionViewCell {
     
     var serviceImageName: String? {
         didSet {
-            
             guard let serviceImageName = serviceImageName else { return }
-            serviceImageView.image = UIImage(named: serviceImageName)?.withRenderingMode(.alwaysTemplate)
+//            serviceImageView.image = UIImage(named: serviceImageName)?.withRenderingMode(.alwaysTemplate)
+            if #available(iOS 13.0, *) {
+                serviceImageView.image = UIImage(systemName: serviceImageName)?.withRenderingMode(.alwaysTemplate)
+            } else {
+                serviceImageView.image = UIImage(named: "generic.service.name")?.withRenderingMode(.alwaysTemplate)
+            }
         }
     }
     
     var serviceImageColor: UIColor? {
         didSet {
-            serviceImageView.tintColor = serviceImageColor ?? .black
+            serviceImageView.tintColor = serviceImageColor// ?? .black
         }
     }
     
@@ -37,7 +41,6 @@ class ServiceCollectionViewCell: UICollectionViewCell {
         super.init(frame: frame)
         
         configureCollectioViewCell()
-        
         additionalConfiguration()
     }
     
@@ -46,7 +49,6 @@ class ServiceCollectionViewCell: UICollectionViewCell {
     }
     
     private func configureCollectioViewCell() {
-        
         contentView.addSubview(serviceImageView)
         contentView.addSubview(serviceNameLabel)
         
@@ -64,7 +66,6 @@ class ServiceCollectionViewCell: UICollectionViewCell {
     }
     
     private func additionalConfiguration() {
-        
         translatesAutoresizingMaskIntoConstraints = false
         backgroundColor = .white
         layer.cornerRadius = 8
@@ -72,9 +73,9 @@ class ServiceCollectionViewCell: UICollectionViewCell {
     }
     
     func configure(with poliService: PoliServiceModel) {
-        
         serviceNameText = poliService.name
         serviceImageName = poliService.icon
+        print("DIEGO - \(poliService.color)")
         serviceImageColor = UIColor(hex: poliService.color)
     }
 }

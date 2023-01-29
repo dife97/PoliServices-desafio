@@ -37,12 +37,10 @@ class SelectPoliServiceViewController: UIViewController {
         super.viewDidLoad()
         
         configureNavigationBar()
-        
         viewModel.getPoliServicesList()
     }
     
     private func configureNavigationBar() {
-        
         title = "Novo Serviço"
         
         let leftBarButtomItem = UIBarButtonItem(
@@ -55,7 +53,6 @@ class SelectPoliServiceViewController: UIViewController {
     }
     
     @objc private func didTapCancelButton() {
-        
         dismiss(animated: true)
     }
 }
@@ -68,7 +65,7 @@ extension SelectPoliServiceViewController: UICollectionViewDelegate {
         let cell = getServiceCollectionViewCell(from: collectionView, indexPath: indexPath)
         
         guard let serviceName = cell.serviceNameText else {
-            fatalError("'serviceName' in ServiceCollectionViewCell was not configured before navigating to next screen")
+            fatalError()
         }
         
         let selectDateViewController = selectDateViewControllerFactory(serviceName: serviceName)
@@ -119,19 +116,19 @@ extension SelectPoliServiceViewController: SelectPoliServiceViewDelegate {
 extension SelectPoliServiceViewController {
     
     func selectDateViewControllerFactory(serviceName: String) -> UIViewController {
-        
         let selectDateViewModel = SelectDateViewModel(serviceName: serviceName)
-        
         let selectDateViewController = SelectDateViewController(viewModel: selectDateViewModel)
         selectDateViewModel.delegate = selectDateViewController
         
         return selectDateViewController
     }
     
-    func getServiceCollectionViewCell(from collectionView: UICollectionView, indexPath: IndexPath) -> ServiceCollectionViewCell {
-        
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ServiceCollectionViewCell.identifier,
-                                                      for: indexPath)
+    func getServiceCollectionViewCell(from collectionView: UICollectionView,
+                                      indexPath: IndexPath) -> ServiceCollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(
+            withReuseIdentifier: ServiceCollectionViewCell.identifier,
+            for: indexPath
+        )
         
         let poliService = viewModel.poliServices[indexPath.row]
         

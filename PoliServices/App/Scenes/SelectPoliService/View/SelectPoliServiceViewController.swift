@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SelectServiceViewController: UIViewController {
+class SelectPoliServiceViewController: UIViewController {
 
     private let viewModel: SelectServiceViewModelProtocol
     
@@ -38,7 +38,7 @@ class SelectServiceViewController: UIViewController {
         
         configureNavigationBar()
         
-        viewModel.getServices()
+        viewModel.getPoliServicesList()
     }
     
     private func configureNavigationBar() {
@@ -60,7 +60,7 @@ class SelectServiceViewController: UIViewController {
     }
 }
 
-extension SelectServiceViewController: UICollectionViewDelegate {
+extension SelectPoliServiceViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView,
                         didSelectItemAt indexPath: IndexPath) {
@@ -77,7 +77,7 @@ extension SelectServiceViewController: UICollectionViewDelegate {
     }
 }
 
-extension SelectServiceViewController: UICollectionViewDataSource {
+extension SelectPoliServiceViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -88,11 +88,11 @@ extension SelectServiceViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView,
                         numberOfItemsInSection section: Int) -> Int {
         
-        return viewModel.services.count
+        return viewModel.poliServices.count
     }
 }
 
-extension SelectServiceViewController: UICollectionViewDelegateFlowLayout {
+extension SelectPoliServiceViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
@@ -102,12 +102,12 @@ extension SelectServiceViewController: UICollectionViewDelegateFlowLayout {
     }
 }
 
-extension SelectServiceViewController: SelectServiceViewDelegate {
+extension SelectPoliServiceViewController: SelectServiceViewDelegate {
     
     func didGetSelectServices() {
         
 //        selectServiceView.updateSelectServicesCollectionView()
-        for service in viewModel.services {
+        for service in viewModel.poliServices {
             print(service.name)
         }
     }
@@ -117,7 +117,7 @@ extension SelectServiceViewController: SelectServiceViewDelegate {
     }
 }
 
-extension SelectServiceViewController {
+extension SelectPoliServiceViewController {
     
     func selectDateViewControllerFactory(serviceName: String) -> UIViewController {
         
@@ -134,7 +134,7 @@ extension SelectServiceViewController {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ServiceCollectionViewCell.identifier,
                                                       for: indexPath)
         
-        let selectService = viewModel.services[indexPath.row]
+        let selectService = viewModel.poliServices[indexPath.row]
         
         guard let serviceCollectionViewCell = cell as? ServiceCollectionViewCell else { return ServiceCollectionViewCell() }
 //        serviceCollectionViewCell.configure(with: selectService)

@@ -29,29 +29,24 @@
 		4C55034929379F3600699589 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C55034829379F3600699589 /* HomeViewController.swift */; };
 		4C55034E29379F3900699589 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C55034D29379F3900699589 /* Assets.xcassets */; };
 		4C55035129379F3900699589 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C55034F29379F3900699589 /* LaunchScreen.storyboard */; };
-		4C5503592937D32A00699589 /* SelectServiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C5503582937D32A00699589 /* SelectServiceViewController.swift */; };
+		4C5503592937D32A00699589 /* SelectPoliServiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C5503582937D32A00699589 /* SelectPoliServiceViewController.swift */; };
+		601B78532985BFF300BFAA98 /* PSMonth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601B78522985BFF300BFAA98 /* PSMonth.swift */; };
+		601B78562985C4E900BFAA98 /* PoliServicesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601B78552985C4E900BFAA98 /* PoliServicesList.swift */; };
+		601B78582985C5A800BFAA98 /* PSError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601B78572985C5A800BFAA98 /* PSError.swift */; };
+		601B785B2985C5F000BFAA98 /* RemotePoliServicesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601B785A2985C5F000BFAA98 /* RemotePoliServicesList.swift */; };
+		601B785D2985C84900BFAA98 /* HTTPGetClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601B785C2985C84900BFAA98 /* HTTPGetClient.swift */; };
+		601B78602985D10200BFAA98 /* URLSessionGetClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601B785F2985D10200BFAA98 /* URLSessionGetClient.swift */; };
 		607487AC2981E04500009F02 /* CurrentDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607487AB2981E04500009F02 /* CurrentDate.swift */; };
 		607487B12981E08900009F02 /* CurrentDateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607487B02981E08900009F02 /* CurrentDateModel.swift */; };
 		607487B62981E1A000009F02 /* FoundationCurrentDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607487B52981E1A000009F02 /* FoundationCurrentDate.swift */; };
-		607487BA2981EB3F00009F02 /* AvailablePoliServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607487B92981EB3F00009F02 /* AvailablePoliServices.swift */; };
 		607487BF2981ED7600009F02 /* PoliServiceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607487BE2981ED7600009F02 /* PoliServiceModel.swift */; };
-		607487F52982049A00009F02 /* RemoteAvailablePoliServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607487F42982049A00009F02 /* RemoteAvailablePoliServices.swift */; };
-		60CA6228297C8E550056C56E /* ServiceFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60CA6227297C8E550056C56E /* ServiceFetcher.swift */; };
-		60CA622B297C8F5A0056C56E /* URLSessionProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60CA622A297C8F5A0056C56E /* URLSessionProvider.swift */; };
-		60CA622D297CA81E0056C56E /* NetworkProviderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60CA622C297CA81E0056C56E /* NetworkProviderProtocol.swift */; };
-		60CA622F297CA9BD0056C56E /* ApiRequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60CA622E297CA9BD0056C56E /* ApiRequestProtocol.swift */; };
-		60CA6231297CA9DB0056C56E /* CustomError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60CA6230297CA9DB0056C56E /* CustomError.swift */; };
+		60CA622F297CA9BD0056C56E /* URLSessionRequestAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60CA622E297CA9BD0056C56E /* URLSessionRequestAdapter.swift */; };
 		60CA6233297CA9F80056C56E /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60CA6232297CA9F80056C56E /* HTTPMethod.swift */; };
 		60CA6237297CAAE80056C56E /* Data+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60CA6236297CAAE80056C56E /* Data+Extension.swift */; };
-		60CA6239297D95FD0056C56E /* ServiceFetcherRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60CA6238297D95FD0056C56E /* ServiceFetcherRequest.swift */; };
-		60CA623B297D9F9D0056C56E /* URLSessionAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60CA623A297D9F9D0056C56E /* URLSessionAdapter.swift */; };
-		60CA623D297DA08A0056C56E /* URLSessionProviderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60CA623C297DA08A0056C56E /* URLSessionProviderProtocol.swift */; };
 		60CE81AB2977618D009667C5 /* SelectServiceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60CE81AA2977618D009667C5 /* SelectServiceViewModel.swift */; };
 		60CE81AD297761B7009667C5 /* SelectServiceViewModelProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60CE81AC297761B7009667C5 /* SelectServiceViewModelProtocols.swift */; };
-		60CE81AF297767BE009667C5 /* CustomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60CE81AE297767BE009667C5 /* CustomColor.swift */; };
 		60CE81B2297768C6009667C5 /* SelectServicesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60CE81B1297768C6009667C5 /* SelectServicesModel.swift */; };
 		60CE81B529776FF0009667C5 /* SystemImageName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60CE81B429776FF0009667C5 /* SystemImageName.swift */; };
-		60CE81B729777572009667C5 /* CustomColorAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60CE81B629777572009667C5 /* CustomColorAdapter.swift */; };
 		60CE81BC29777EB1009667C5 /* SelectDateViewModelProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60CE81BB29777EB1009667C5 /* SelectDateViewModelProtocols.swift */; };
 		60CE81BE29777EC2009667C5 /* SelectDateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60CE81BD29777EC2009667C5 /* SelectDateViewModel.swift */; };
 		60CE81C0297784D1009667C5 /* ScheduledServiceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60CE81BF297784D1009667C5 /* ScheduledServiceModel.swift */; };
@@ -83,29 +78,24 @@
 		4C55034D29379F3900699589 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4C55035029379F3900699589 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4C55035229379F3900699589 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4C5503582937D32A00699589 /* SelectServiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectServiceViewController.swift; sourceTree = "<group>"; };
+		4C5503582937D32A00699589 /* SelectPoliServiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPoliServiceViewController.swift; sourceTree = "<group>"; };
+		601B78522985BFF300BFAA98 /* PSMonth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSMonth.swift; sourceTree = "<group>"; };
+		601B78552985C4E900BFAA98 /* PoliServicesList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoliServicesList.swift; sourceTree = "<group>"; };
+		601B78572985C5A800BFAA98 /* PSError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSError.swift; sourceTree = "<group>"; };
+		601B785A2985C5F000BFAA98 /* RemotePoliServicesList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemotePoliServicesList.swift; sourceTree = "<group>"; };
+		601B785C2985C84900BFAA98 /* HTTPGetClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPGetClient.swift; sourceTree = "<group>"; };
+		601B785F2985D10200BFAA98 /* URLSessionGetClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionGetClient.swift; sourceTree = "<group>"; };
 		607487AB2981E04500009F02 /* CurrentDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentDate.swift; sourceTree = "<group>"; };
 		607487B02981E08900009F02 /* CurrentDateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentDateModel.swift; sourceTree = "<group>"; };
 		607487B52981E1A000009F02 /* FoundationCurrentDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoundationCurrentDate.swift; sourceTree = "<group>"; };
-		607487B92981EB3F00009F02 /* AvailablePoliServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailablePoliServices.swift; sourceTree = "<group>"; };
 		607487BE2981ED7600009F02 /* PoliServiceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoliServiceModel.swift; sourceTree = "<group>"; };
-		607487F42982049A00009F02 /* RemoteAvailablePoliServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteAvailablePoliServices.swift; sourceTree = "<group>"; };
-		60CA6227297C8E550056C56E /* ServiceFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceFetcher.swift; sourceTree = "<group>"; };
-		60CA622A297C8F5A0056C56E /* URLSessionProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionProvider.swift; sourceTree = "<group>"; };
-		60CA622C297CA81E0056C56E /* NetworkProviderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProviderProtocol.swift; sourceTree = "<group>"; };
-		60CA622E297CA9BD0056C56E /* ApiRequestProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRequestProtocol.swift; sourceTree = "<group>"; };
-		60CA6230297CA9DB0056C56E /* CustomError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomError.swift; sourceTree = "<group>"; };
+		60CA622E297CA9BD0056C56E /* URLSessionRequestAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionRequestAdapter.swift; sourceTree = "<group>"; };
 		60CA6232297CA9F80056C56E /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 		60CA6236297CAAE80056C56E /* Data+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Extension.swift"; sourceTree = "<group>"; };
-		60CA6238297D95FD0056C56E /* ServiceFetcherRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceFetcherRequest.swift; sourceTree = "<group>"; };
-		60CA623A297D9F9D0056C56E /* URLSessionAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionAdapter.swift; sourceTree = "<group>"; };
-		60CA623C297DA08A0056C56E /* URLSessionProviderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionProviderProtocol.swift; sourceTree = "<group>"; };
 		60CE81AA2977618D009667C5 /* SelectServiceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectServiceViewModel.swift; sourceTree = "<group>"; };
 		60CE81AC297761B7009667C5 /* SelectServiceViewModelProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectServiceViewModelProtocols.swift; sourceTree = "<group>"; };
-		60CE81AE297767BE009667C5 /* CustomColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColor.swift; sourceTree = "<group>"; };
 		60CE81B1297768C6009667C5 /* SelectServicesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectServicesModel.swift; sourceTree = "<group>"; };
 		60CE81B429776FF0009667C5 /* SystemImageName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemImageName.swift; sourceTree = "<group>"; };
-		60CE81B629777572009667C5 /* CustomColorAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColorAdapter.swift; sourceTree = "<group>"; };
 		60CE81BB29777EB1009667C5 /* SelectDateViewModelProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectDateViewModelProtocols.swift; sourceTree = "<group>"; };
 		60CE81BD29777EC2009667C5 /* SelectDateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectDateViewModel.swift; sourceTree = "<group>"; };
 		60CE81BF297784D1009667C5 /* ScheduledServiceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduledServiceModel.swift; sourceTree = "<group>"; };
@@ -174,7 +164,6 @@
 			isa = PBXGroup;
 			children = (
 				60CE81B329776FE4009667C5 /* Images */,
-				4B94CE77296B50B800144E87 /* Colors */,
 				4B7AE5AB296B461A0060AD41 /* Components */,
 			);
 			path = DesignSystem;
@@ -191,20 +180,12 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
-		4B94CE77296B50B800144E87 /* Colors */ = {
-			isa = PBXGroup;
-			children = (
-				60CE81AE297767BE009667C5 /* CustomColor.swift */,
-				60CE81B629777572009667C5 /* CustomColorAdapter.swift */,
-			);
-			path = Colors;
-			sourceTree = "<group>";
-		};
 		4BCB961629565F2800B15A58 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
 				4BCB961729565F3300B15A58 /* Home */,
-				4BCB961829565F6A00B15A58 /* ScheduleService */,
+				4BCB961A29565F8B00B15A58 /* SelectPoliService */,
+				4BCB961929565F7A00B15A58 /* SelectDate */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -219,15 +200,6 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
-		4BCB961829565F6A00B15A58 /* ScheduleService */ = {
-			isa = PBXGroup;
-			children = (
-				4BCB961A29565F8B00B15A58 /* SelectService */,
-				4BCB961929565F7A00B15A58 /* SelectDate */,
-			);
-			path = ScheduleService;
-			sourceTree = "<group>";
-		};
 		4BCB961929565F7A00B15A58 /* SelectDate */ = {
 			isa = PBXGroup;
 			children = (
@@ -238,15 +210,14 @@
 			path = SelectDate;
 			sourceTree = "<group>";
 		};
-		4BCB961A29565F8B00B15A58 /* SelectService */ = {
+		4BCB961A29565F8B00B15A58 /* SelectPoliService */ = {
 			isa = PBXGroup;
 			children = (
 				60CE81B0297768BB009667C5 /* Models */,
 				60CE81A829776155009667C5 /* View */,
 				60CE81A92977615E009667C5 /* ViewModel */,
-				60CA6229297C8EF90056C56E /* Network */,
 			);
-			path = SelectService;
+			path = SelectPoliService;
 			sourceTree = "<group>";
 		};
 		4BCB961B29565FC400B15A58 /* AppDelegate */ = {
@@ -288,8 +259,6 @@
 				601B78512985BB9E00BFAA98 /* Data */,
 				60CE81A7297760CB009667C5 /* App */,
 				60CA6226297C8E370056C56E /* Network */,
-				607487B72981EAFC00009F02 /* AvailablePoliServices */,
-				607487F62982110F00009F02 /* URLSessionClient */,
 				4B6F4B7E295783BB00D67D79 /* CustomTimer */,
 				4B7AE5A9296B460B0060AD41 /* Infrastructure */,
 				4C55035229379F3900699589 /* Info.plist */,
@@ -300,8 +269,8 @@
 		601B784D2985BB7100BFAA98 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-				601B78502985BB8A00BFAA98 /* Models */,
 				601B784E2985BB7700BFAA98 /* UseCases */,
+				601B78502985BB8A00BFAA98 /* Models */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -309,6 +278,7 @@
 		601B784E2985BB7700BFAA98 /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
+				601B78542985C4DC00BFAA98 /* PoliServicesList */,
 				601B784F2985BB7E00BFAA98 /* CurrentDate */,
 			);
 			path = UseCases;
@@ -326,6 +296,9 @@
 			isa = PBXGroup;
 			children = (
 				607487B02981E08900009F02 /* CurrentDateModel.swift */,
+				607487BE2981ED7600009F02 /* PoliServiceModel.swift */,
+				601B78522985BFF300BFAA98 /* PSMonth.swift */,
+				601B78572985C5A800BFAA98 /* PSError.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -333,73 +306,45 @@
 		601B78512985BB9E00BFAA98 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				601B78592985C5DE00BFAA98 /* PoliServicesList */,
 				4BCB96202956767900B15A58 /* CurrentDate */,
 			);
 			path = Data;
 			sourceTree = "<group>";
 		};
-		607487B72981EAFC00009F02 /* AvailablePoliServices */ = {
+		601B78542985C4DC00BFAA98 /* PoliServicesList */ = {
 			isa = PBXGroup;
 			children = (
-				607487B82981EB2D00009F02 /* Domain_UseCase */,
-				607487F32982042F00009F02 /* Data_ImplementationOfUseCase */,
+				601B78552985C4E900BFAA98 /* PoliServicesList.swift */,
 			);
-			path = AvailablePoliServices;
+			path = PoliServicesList;
 			sourceTree = "<group>";
 		};
-		607487B82981EB2D00009F02 /* Domain_UseCase */ = {
+		601B78592985C5DE00BFAA98 /* PoliServicesList */ = {
 			isa = PBXGroup;
 			children = (
-				607487B92981EB3F00009F02 /* AvailablePoliServices.swift */,
-				607487BE2981ED7600009F02 /* PoliServiceModel.swift */,
+				601B785A2985C5F000BFAA98 /* RemotePoliServicesList.swift */,
 			);
-			path = Domain_UseCase;
+			path = PoliServicesList;
 			sourceTree = "<group>";
 		};
-		607487F32982042F00009F02 /* Data_ImplementationOfUseCase */ = {
+		601B785E2985D0FB00BFAA98 /* URLSession */ = {
 			isa = PBXGroup;
 			children = (
-				607487F42982049A00009F02 /* RemoteAvailablePoliServices.swift */,
+				601B785F2985D10200BFAA98 /* URLSessionGetClient.swift */,
+				60CA622E297CA9BD0056C56E /* URLSessionRequestAdapter.swift */,
 			);
-			path = Data_ImplementationOfUseCase;
-			sourceTree = "<group>";
-		};
-		607487F62982110F00009F02 /* URLSessionClient */ = {
-			isa = PBXGroup;
-			children = (
-				60CA623A297D9F9D0056C56E /* URLSessionAdapter.swift */,
-			);
-			path = URLSessionClient;
+			path = URLSession;
 			sourceTree = "<group>";
 		};
 		60CA6226297C8E370056C56E /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				60CA622C297CA81E0056C56E /* NetworkProviderProtocol.swift */,
-				60CA622E297CA9BD0056C56E /* ApiRequestProtocol.swift */,
-				60CA6230297CA9DB0056C56E /* CustomError.swift */,
+				601B785C2985C84900BFAA98 /* HTTPGetClient.swift */,
 				60CA6232297CA9F80056C56E /* HTTPMethod.swift */,
-				60CA623E297DA0A90056C56E /* URLSessionProvider */,
+				601B785E2985D0FB00BFAA98 /* URLSession */,
 			);
 			path = Network;
-			sourceTree = "<group>";
-		};
-		60CA6229297C8EF90056C56E /* Network */ = {
-			isa = PBXGroup;
-			children = (
-				60CA6227297C8E550056C56E /* ServiceFetcher.swift */,
-				60CA6238297D95FD0056C56E /* ServiceFetcherRequest.swift */,
-			);
-			path = Network;
-			sourceTree = "<group>";
-		};
-		60CA623E297DA0A90056C56E /* URLSessionProvider */ = {
-			isa = PBXGroup;
-			children = (
-				60CA623C297DA08A0056C56E /* URLSessionProviderProtocol.swift */,
-				60CA622A297C8F5A0056C56E /* URLSessionProvider.swift */,
-			);
-			path = URLSessionProvider;
 			sourceTree = "<group>";
 		};
 		60CE81A7297760CB009667C5 /* App */ = {
@@ -416,7 +361,7 @@
 		60CE81A829776155009667C5 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				4C5503582937D32A00699589 /* SelectServiceViewController.swift */,
+				4C5503582937D32A00699589 /* SelectPoliServiceViewController.swift */,
 				4BF27F25296BA2A00097637D /* SelectServiceView.swift */,
 				4BF27F27296BA9ED0097637D /* ServiceCollectionViewCell.swift */,
 			);
@@ -556,49 +501,44 @@
 			buildActionMask = 2147483647;
 			files = (
 				60CA6233297CA9F80056C56E /* HTTPMethod.swift in Sources */,
+				601B785D2985C84900BFAA98 /* HTTPGetClient.swift in Sources */,
 				4BF27F24296BA24E0097637D /* SelectDateView.swift in Sources */,
 				60CE81BE29777EC2009667C5 /* SelectDateViewModel.swift in Sources */,
+				601B785B2985C5F000BFAA98 /* RemotePoliServicesList.swift in Sources */,
 				60CE81B2297768C6009667C5 /* SelectServicesModel.swift in Sources */,
 				4B6F4B80295783CE00D67D79 /* CustomTimer.swift in Sources */,
 				4B7AE5AD296B46230060AD41 /* CustomLabel.swift in Sources */,
-				607487BA2981EB3F00009F02 /* AvailablePoliServices.swift in Sources */,
 				4B7AE5A5296B42160060AD41 /* HomeView.swift in Sources */,
 				60CE81AB2977618D009667C5 /* SelectServiceViewModel.swift in Sources */,
 				607487B12981E08900009F02 /* CurrentDateModel.swift in Sources */,
 				4C30F0A829391842002C3068 /* SelectDateViewController.swift in Sources */,
 				4BCB961F2956602700B15A58 /* HomeViewModelProtocols.swift in Sources */,
 				60CE81C0297784D1009667C5 /* ScheduledServiceModel.swift in Sources */,
-				60CA622B297C8F5A0056C56E /* URLSessionProvider.swift in Sources */,
 				60CE81C329778B78009667C5 /* Date+Extension.swift in Sources */,
 				4BCB961D29565FF400B15A58 /* HomeViewModel.swift in Sources */,
 				60CE81B529776FF0009667C5 /* SystemImageName.swift in Sources */,
 				4C55034929379F3600699589 /* HomeViewController.swift in Sources */,
-				60CA623D297DA08A0056C56E /* URLSessionProviderProtocol.swift in Sources */,
 				4B20FF97295697DB0038955D /* ServiceModel.swift in Sources */,
-				60CA6228297C8E550056C56E /* ServiceFetcher.swift in Sources */,
 				4BF27F28296BA9ED0097637D /* ServiceCollectionViewCell.swift in Sources */,
-				60CA6239297D95FD0056C56E /* ServiceFetcherRequest.swift in Sources */,
 				60CA6237297CAAE80056C56E /* Data+Extension.swift in Sources */,
+				601B78602985D10200BFAA98 /* URLSessionGetClient.swift in Sources */,
 				4B15571C296B746C001C8C7F /* CustomImageView.swift in Sources */,
 				4B94CE79296B50C500144E87 /* UIColor+Extension.swift in Sources */,
-				607487F52982049A00009F02 /* RemoteAvailablePoliServices.swift in Sources */,
 				607487B62981E1A000009F02 /* FoundationCurrentDate.swift in Sources */,
 				4B15571E296B7B0D001C8C7F /* CustomButton.swift in Sources */,
 				60CE81BC29777EB1009667C5 /* SelectDateViewModelProtocols.swift in Sources */,
-				60CE81B729777572009667C5 /* CustomColorAdapter.swift in Sources */,
-				60CA622D297CA81E0056C56E /* NetworkProviderProtocol.swift in Sources */,
-				60CA622F297CA9BD0056C56E /* ApiRequestProtocol.swift in Sources */,
-				60CE81AF297767BE009667C5 /* CustomColor.swift in Sources */,
-				60CA623B297D9F9D0056C56E /* URLSessionAdapter.swift in Sources */,
+				60CA622F297CA9BD0056C56E /* URLSessionRequestAdapter.swift in Sources */,
+				601B78562985C4E900BFAA98 /* PoliServicesList.swift in Sources */,
 				4B94CE7D296B56B700144E87 /* LastServiceView.swift in Sources */,
+				601B78582985C5A800BFAA98 /* PSError.swift in Sources */,
 				4B94CE7B296B52F700144E87 /* CustomDividerView.swift in Sources */,
 				4C55034529379F3600699589 /* AppDelegate.swift in Sources */,
-				60CA6231297CA9DB0056C56E /* CustomError.swift in Sources */,
 				607487BF2981ED7600009F02 /* PoliServiceModel.swift in Sources */,
 				4BF27F26296BA2A00097637D /* SelectServiceView.swift in Sources */,
 				4B5F6C902969C54B00F1D14B /* DescriptionModel.swift in Sources */,
-				4C5503592937D32A00699589 /* SelectServiceViewController.swift in Sources */,
+				4C5503592937D32A00699589 /* SelectPoliServiceViewController.swift in Sources */,
 				607487AC2981E04500009F02 /* CurrentDate.swift in Sources */,
+				601B78532985BFF300BFAA98 /* PSMonth.swift in Sources */,
 				4B20FF99295697F20038955D /* ServiceKeys.swift in Sources */,
 				4B94CE76296B4D7700144E87 /* DescriptionView.swift in Sources */,
 				60CE81AD297761B7009667C5 /* SelectServiceViewModelProtocols.swift in Sources */,

@@ -1,8 +1,7 @@
-//
-//  PSError.swift
-//  PoliServices
-//
-//  Created by Personal on 28/01/23.
-//
-
-import Foundation
+enum PSError: Error {
+    case httpError(statusCode: Int)
+    case networkError(message: String)
+    case responseError
+    case missingData
+    case failedToCreateRequest
+}

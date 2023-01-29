@@ -1,36 +1,30 @@
 class SelectServiceViewModel: SelectServiceViewModelProtocol {
     
-    var serviceFetcher: ServiceFetcherProtocol
+    var poliServicesList: PoliServicesList
     
-    init(serviceFetcher: ServiceFetcherProtocol) {
-        self.serviceFetcher = serviceFetcher
+    init(poliServicesListProvider: PoliServicesList) {
+        self.poliServicesList = poliServicesListProvider
     }
     
-    var services: ServicesModel = []
+    var poliServices: PoliServices = []
     
-    weak var delegate: SelectServiceViewDelegate?
+    weak var delegate: SelectPoliServiceViewDelegate?
     
-    func getServices() {
-        
-        serviceFetcher.getServices { [weak self] result in
-            
-            guard let self else { return }
+    
+    
+    
+    
+    func getPoliServicesList() {
+        poliServicesList.getPoliServicesList { [weak self] result in
+            guard let self else { return } //TODO: implement error?
             
             switch result {
-            case .success(let data):
+            case .success(let poliServices):
+                self.poliServices = poliServices
+                self.delegate?.didGetPoliServicesList()
                 
-                guard let services = data.decode(to: SelectServicesModel.self)?.data else {
-                    self.delegate?.failedToGetServicesDate()
-                    
-                    return
-                }
-                
-                self.services = services
-                
-                self.delegate?.didGetSelectServices()
             case .failure(_):
-                
-                fatalError()
+                self.delegate?.failedToGetPoliServicesList()
             }
         }
     }

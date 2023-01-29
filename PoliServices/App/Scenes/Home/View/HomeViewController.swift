@@ -24,7 +24,6 @@ class HomeViewController: UIViewController {
     private lazy var homeView: HomeView = {
         let view = HomeView()
         view.serviceButtonAction = { [unowned self] in
-            
             self.didTapNewServiceButton()
         }
         
@@ -32,7 +31,6 @@ class HomeViewController: UIViewController {
     }()
     
     override func loadView() {
-
         view = homeView
     }
     
@@ -49,31 +47,27 @@ class HomeViewController: UIViewController {
     }
     
     private func configureView() {
-        
         viewModel.getCurrentDate()
         configureDescriptionLabel()
         viewModel.startTimer()
     }
     
     private func configureDescriptionLabel() {
-        
         viewModel.getDescriptionLabel { [unowned self] descriptionText in
             self.homeView.descriptionText = descriptionText
         }
     }
     
     private func didTapNewServiceButton() {
-        
         let selectServiceNavigationController = selectServiceNavigationControllerFactory()
         show(selectServiceNavigationController, sender: self)
     }
     
     func selectServiceNavigationControllerFactory() -> UINavigationController {
-        
-        let provider = URLSessionProvider()
-        let serviceFetcher = ServiceFetcher(provider: provider)
-        let viewModel = SelectServiceViewModel(serviceFetcher: serviceFetcher)
-        let viewController = SelectServiceViewController(viewModel: viewModel)
+        let urlSessionGetProvider = URLSessionGetClient()
+        let poliServicesListProvider = RemotePoliServicesList(httpGetClient: urlSessionGetProvider)
+        let viewModel = SelectServiceViewModel(poliServicesListProvider: poliServicesListProvider)
+        let viewController = SelectPoliServiceViewController(viewModel: viewModel)
         viewModel.delegate = viewController
 
         let navigationController = UINavigationController(rootViewController: viewController)
@@ -97,14 +91,12 @@ extension HomeViewController: HomeViewModelDelegate {
 extension HomeViewController: ScheduledServiceDelegate {
 
     func didGetScheduledService(service: ServiceModel) {
-
         homeView.serviceNameText = service.serviceName
         homeView.serviceDateText = service.serviceDate
         homeView.configureServiceView(hasService: true)
     }
 
     func noScheduledService() {
-
         homeView.configureServiceView(hasService: false)
     }
 }

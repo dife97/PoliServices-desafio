@@ -1,36 +1,19 @@
-protocol SelectServiceViewModelProtocol: AnyObject, SelectServiceCreator {
+protocol SelectServiceViewModelProtocol: AnyObject {
     
-    var serviceFetcher: ServiceFetcherProtocol { get }
     
-    var services: ServicesModel { get }
+    // MARK: - PoliServices List
+    var poliServicesList: PoliServicesList { get }
+    func getPoliServicesList()
     
-    var delegate: SelectServiceViewDelegate? { get set }
     
-    func getServices()
+    
+    var poliServices: PoliServices { get }
+    var delegate: SelectPoliServiceViewDelegate? { get set }
+    
 }
 
-protocol SelectServiceViewDelegate: AnyObject {
+protocol SelectPoliServiceViewDelegate: AnyObject {
     
-    func didGetSelectServices()
-    func failedToGetServicesDate()
+    func didGetPoliServicesList()
+    func failedToGetPoliServicesList()
 }
-
-protocol SelectServiceCreator {
-    
-    func createSelectService(name: String, systemImageName: SystemImageName, imageColor: CustomColor) -> SelectServicesModel
-}
-
-extension SelectServiceCreator {
-    
-    func createSelectService(name: String, systemImageName: SystemImageName, imageColor: CustomColor) -> SelectServicesModel {
-        
-//        let selectServiceModel = SelectServicesModel(name: name,
-//                                                     systemImageName: systemImageName,
-//                                                     imageColor: imageColor)
-        
-        let selectServiceModel = SelectServicesModel(success: true, data: [])
-        
-        return selectServiceModel
-    }
-}
-

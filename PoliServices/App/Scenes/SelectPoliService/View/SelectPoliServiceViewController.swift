@@ -102,17 +102,16 @@ extension SelectPoliServiceViewController: UICollectionViewDelegateFlowLayout {
     }
 }
 
-extension SelectPoliServiceViewController: SelectServiceViewDelegate {
+extension SelectPoliServiceViewController: SelectPoliServiceViewDelegate {
     
-    func didGetSelectServices() {
-        
-//        selectServiceView.updateSelectServicesCollectionView()
-        for service in viewModel.poliServices {
-            print(service.name)
+    func didGetPoliServicesList() {
+        DispatchQueue.main.async { [weak self] in
+            guard let self else { return }
+            self.selectServiceView.updateSelectServicesCollectionView()
         }
     }
     
-    func failedToGetServicesDate() {
+    func failedToGetPoliServicesList() {
         
     }
 }
@@ -134,10 +133,10 @@ extension SelectPoliServiceViewController {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ServiceCollectionViewCell.identifier,
                                                       for: indexPath)
         
-        let selectService = viewModel.poliServices[indexPath.row]
+        let poliService = viewModel.poliServices[indexPath.row]
         
         guard let serviceCollectionViewCell = cell as? ServiceCollectionViewCell else { return ServiceCollectionViewCell() }
-//        serviceCollectionViewCell.configure(with: selectService)
+        serviceCollectionViewCell.configure(with: poliService)
         
         return serviceCollectionViewCell
     }

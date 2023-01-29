@@ -11,7 +11,7 @@ class FoundationCurrentDate: CurrentDate {
         guard
             let day = dateComponents.day,
             let month = dateComponents.month,
-            let monthString = Month.brazilian[month],
+            let monthString = PSMonth.brazilian[month],
             let year = dateComponents.year
         else {
             onComplete(nil)

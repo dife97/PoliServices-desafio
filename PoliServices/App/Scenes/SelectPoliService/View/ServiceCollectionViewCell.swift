@@ -71,10 +71,10 @@ class ServiceCollectionViewCell: UICollectionViewCell {
         clipsToBounds = true
     }
     
-    func configure(with selectService: SelectServicesModel) {
+    func configure(with poliService: PoliServiceModel) {
         
-//        serviceNameText = selectService.name
-//        serviceImageName = selectService.systemImageName.rawValue
-//        serviceImageColor = selectService.imageColor.toUIColor()
+        serviceNameText = poliService.name
+        serviceImageName = poliService.icon
+        serviceImageColor = UIColor(hex: poliService.color)
     }
 }

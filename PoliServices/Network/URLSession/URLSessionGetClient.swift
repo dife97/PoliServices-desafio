@@ -3,6 +3,8 @@ import Foundation
 class URLSessionGetClient: HttpGetClient {
     
     private let urlSession: URLSession
+    private var urlRequestAdapter: URLSessionRequestAdapter?
+//    private let urlRequestAdapter: URLSessionRequest?
     
     init(
         urlSession: URLSession = URLSession.shared
@@ -12,16 +14,13 @@ class URLSessionGetClient: HttpGetClient {
     
     func get(from urlString: String, onComplete: @escaping (Result<Data, Error>) -> Void) {
         
-        guard let url = URL(string: urlString) else {
-            // TODO: implement error
-            return
-        }
-        
-        let urlRequest = URLRequest(url: url)
+        let urlRequest = URLSessionRequestAdapter(
+            method: .get,
+            urlString: urlString
+        ).makeURLRequest()
         
         urlSession.dataTask(with: urlRequest) { data, urlResponse, error in
             if error == nil {
-                
                 guard let urlResponse = urlResponse as? HTTPURLResponse else {
                     // TODO: implement error
                     return

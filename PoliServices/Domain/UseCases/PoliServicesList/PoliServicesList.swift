@@ -1,4 +1,4 @@
 protocol PoliServicesList {
     
-    func getPoliServicesList(onComplete: @escaping (Result<PoliServiceModel, PSError>) -> Void)
+    func getPoliServicesList(onComplete: @escaping (Result<PoliServices, PSError>) -> Void)
 }

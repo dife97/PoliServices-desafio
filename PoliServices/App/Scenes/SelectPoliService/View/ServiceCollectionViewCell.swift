@@ -30,12 +30,20 @@ class ServiceCollectionViewCell: UICollectionViewCell {
     
     private lazy var serviceImageView = CustomImageView()
     
-    private lazy var serviceNameLabel = CustomLabel(
-        text: "Service Name",
-        size: 20,
-        weight: .bold,
-        alignment: .center
-    )
+    private lazy var serviceNameLabel: CustomLabel = {
+        let label = CustomLabel(
+            text: "Service Name",
+            size: 20,
+            weight: .bold,
+            alignment: .center
+        )
+        
+        label.numberOfLines = 0
+        label.adjustsFontSizeToFitWidth = true
+        label.minimumScaleFactor = 0.5
+        
+        return label
+    }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)

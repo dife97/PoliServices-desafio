@@ -125,6 +125,7 @@ extension SelectPoliServiceViewController {
     
     func getServiceCollectionViewCell(from collectionView: UICollectionView,
                                       indexPath: IndexPath) -> ServiceCollectionViewCell {
+        
         let cell = collectionView.dequeueReusableCell(
             withReuseIdentifier: ServiceCollectionViewCell.identifier,
             for: indexPath

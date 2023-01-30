@@ -7,18 +7,18 @@ class ServiceCollectionViewCell: UICollectionViewCell {
     var serviceImageName: String? {
         didSet {
             guard let serviceImageName = serviceImageName else { return }
-//            serviceImageView.image = UIImage(named: serviceImageName)?.withRenderingMode(.alwaysTemplate)
+
             if #available(iOS 13.0, *) {
-                serviceImageView.image = UIImage(systemName: serviceImageName)?.withRenderingMode(.alwaysTemplate)
+                serviceImageView.image = UIImage(systemName: serviceImageName)
             } else {
-                serviceImageView.image = UIImage(named: "generic.service.name")?.withRenderingMode(.alwaysTemplate)
+                serviceImageView.image = UIImage(named: "generic.service.name")
             }
         }
     }
     
     var serviceImageColor: UIColor? {
         didSet {
-            serviceImageView.tintColor = serviceImageColor// ?? .black
+            serviceImageView.tintColor = serviceImageColor ?? .black
         }
     }
     
@@ -83,7 +83,6 @@ class ServiceCollectionViewCell: UICollectionViewCell {
     func configure(with poliService: PoliServiceModel) {
         serviceNameText = poliService.name
         serviceImageName = poliService.icon
-        print("DIEGO - \(poliService.color)")
         serviceImageColor = UIColor(hex: poliService.color)
     }
 }

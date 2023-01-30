@@ -43,13 +43,12 @@ class HomeViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        viewModel.getScheduledService()
+        viewModel.checkScheduledPoliService()
     }
     
     private func configureView() {
         viewModel.getCurrentDate()
         configureDescriptionLabel()
-        viewModel.startTimer()
     }
     
     private func configureDescriptionLabel() {
@@ -90,13 +89,15 @@ extension HomeViewController: HomeViewModelDelegate {
 
 extension HomeViewController: ScheduledServiceDelegate {
 
-    func didGetScheduledService(service: ServiceModel) {
-        homeView.serviceNameText = service.serviceName
-        homeView.serviceDateText = service.serviceDate
+    func didGetScheduledService(service: PoliServiceViewModel) {
+        
+        homeView.serviceNameText = service.name
+        homeView.serviceDateText = service.date
         homeView.configureServiceView(hasService: true)
     }
 
     func noScheduledService() {
+        
         homeView.configureServiceView(hasService: false)
     }
 }

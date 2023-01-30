@@ -24,7 +24,6 @@ class SelectDateViewController: UIViewController {
     private lazy var selectDateView = SelectDateView()
 
     override func loadView() {
-
         view = selectDateView
     }
     
@@ -48,7 +47,6 @@ class SelectDateViewController: UIViewController {
     }
     
     @objc private func didTapSaveButton() {
-        
         viewModel.saveService(name: viewModel.serviceName,
                               date: selectDateView.timeIntervalSince1970)
     }
@@ -57,7 +55,6 @@ class SelectDateViewController: UIViewController {
 extension SelectDateViewController: SelectDateViewDelegate {
     
     func didSaveService() {
-        
         dismiss(animated: true)
     }
 }

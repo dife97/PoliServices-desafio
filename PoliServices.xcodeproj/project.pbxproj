@@ -9,10 +9,10 @@
 /* Begin PBXBuildFile section */
 		4B15571C296B746C001C8C7F /* CustomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B15571B296B746C001C8C7F /* CustomImageView.swift */; };
 		4B15571E296B7B0D001C8C7F /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B15571D296B7B0D001C8C7F /* CustomButton.swift */; };
-		4B20FF97295697DB0038955D /* ServiceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B20FF96295697DB0038955D /* ServiceModel.swift */; };
+		4B20FF97295697DB0038955D /* PoliServiceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B20FF96295697DB0038955D /* PoliServiceViewModel.swift */; };
 		4B20FF99295697F20038955D /* ServiceKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B20FF98295697F20038955D /* ServiceKeys.swift */; };
 		4B5F6C902969C54B00F1D14B /* DescriptionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B5F6C8F2969C54B00F1D14B /* DescriptionModel.swift */; };
-		4B6F4B80295783CE00D67D79 /* CustomTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6F4B7F295783CE00D67D79 /* CustomTimer.swift */; };
+		4B6F4B80295783CE00D67D79 /* FoundationPSTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6F4B7F295783CE00D67D79 /* FoundationPSTimer.swift */; };
 		4B7AE5A5296B42160060AD41 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7AE5A4296B42160060AD41 /* HomeView.swift */; };
 		4B7AE5AD296B46230060AD41 /* CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7AE5AC296B46230060AD41 /* CustomLabel.swift */; };
 		4B94CE76296B4D7700144E87 /* DescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B94CE75296B4D7700144E87 /* DescriptionView.swift */; };
@@ -51,15 +51,16 @@
 		60CE81BE29777EC2009667C5 /* SelectDateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60CE81BD29777EC2009667C5 /* SelectDateViewModel.swift */; };
 		60CE81C0297784D1009667C5 /* ScheduledServiceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60CE81BF297784D1009667C5 /* ScheduledServiceModel.swift */; };
 		60CE81C329778B78009667C5 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60CE81C229778B78009667C5 /* Date+Extension.swift */; };
+		60CF17FB2987024900340F3C /* PSTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60CF17FA2987024900340F3C /* PSTimer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		4B15571B296B746C001C8C7F /* CustomImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomImageView.swift; sourceTree = "<group>"; };
 		4B15571D296B7B0D001C8C7F /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
-		4B20FF96295697DB0038955D /* ServiceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceModel.swift; sourceTree = "<group>"; };
+		4B20FF96295697DB0038955D /* PoliServiceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoliServiceViewModel.swift; sourceTree = "<group>"; };
 		4B20FF98295697F20038955D /* ServiceKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceKeys.swift; sourceTree = "<group>"; };
 		4B5F6C8F2969C54B00F1D14B /* DescriptionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionModel.swift; sourceTree = "<group>"; };
-		4B6F4B7F295783CE00D67D79 /* CustomTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTimer.swift; sourceTree = "<group>"; };
+		4B6F4B7F295783CE00D67D79 /* FoundationPSTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoundationPSTimer.swift; sourceTree = "<group>"; };
 		4B7AE5A4296B42160060AD41 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		4B7AE5AC296B46230060AD41 /* CustomLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLabel.swift; sourceTree = "<group>"; };
 		4B94CE75296B4D7700144E87 /* DescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionView.swift; sourceTree = "<group>"; };
@@ -100,6 +101,7 @@
 		60CE81BD29777EC2009667C5 /* SelectDateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectDateViewModel.swift; sourceTree = "<group>"; };
 		60CE81BF297784D1009667C5 /* ScheduledServiceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduledServiceModel.swift; sourceTree = "<group>"; };
 		60CE81C229778B78009667C5 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
+		60CF17FA2987024900340F3C /* PSTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSTimer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,12 +115,12 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4B6F4B7E295783BB00D67D79 /* CustomTimer */ = {
+		4B6F4B7E295783BB00D67D79 /* PSTimer */ = {
 			isa = PBXGroup;
 			children = (
-				4B6F4B7F295783CE00D67D79 /* CustomTimer.swift */,
+				4B6F4B7F295783CE00D67D79 /* FoundationPSTimer.swift */,
 			);
-			path = CustomTimer;
+			path = PSTimer;
 			sourceTree = "<group>";
 		};
 		4B7AE5A6296B425C0060AD41 /* View */ = {
@@ -144,7 +146,7 @@
 		4B7AE5A8296B42750060AD41 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				4B20FF96295697DB0038955D /* ServiceModel.swift */,
+				4B20FF96295697DB0038955D /* PoliServiceViewModel.swift */,
 				4B5F6C8F2969C54B00F1D14B /* DescriptionModel.swift */,
 				4B20FF98295697F20038955D /* ServiceKeys.swift */,
 			);
@@ -259,7 +261,6 @@
 				601B78512985BB9E00BFAA98 /* Data */,
 				60CE81A7297760CB009667C5 /* App */,
 				60CA6226297C8E370056C56E /* Network */,
-				4B6F4B7E295783BB00D67D79 /* CustomTimer */,
 				4B7AE5A9296B460B0060AD41 /* Infrastructure */,
 				4C55035229379F3900699589 /* Info.plist */,
 			);
@@ -278,8 +279,9 @@
 		601B784E2985BB7700BFAA98 /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
-				601B78542985C4DC00BFAA98 /* PoliServicesList */,
 				601B784F2985BB7E00BFAA98 /* CurrentDate */,
+				601B78542985C4DC00BFAA98 /* PoliServicesList */,
+				60CF17F92987023700340F3C /* PSTimer */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -306,8 +308,9 @@
 		601B78512985BB9E00BFAA98 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				601B78592985C5DE00BFAA98 /* PoliServicesList */,
 				4BCB96202956767900B15A58 /* CurrentDate */,
+				601B78592985C5DE00BFAA98 /* PoliServicesList */,
+				4B6F4B7E295783BB00D67D79 /* PSTimer */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -429,6 +432,14 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		60CF17F92987023700340F3C /* PSTimer */ = {
+			isa = PBXGroup;
+			children = (
+				60CF17FA2987024900340F3C /* PSTimer.swift */,
+			);
+			path = PSTimer;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -506,7 +517,7 @@
 				60CE81BE29777EC2009667C5 /* SelectDateViewModel.swift in Sources */,
 				601B785B2985C5F000BFAA98 /* RemotePoliServicesList.swift in Sources */,
 				60CE81B2297768C6009667C5 /* SelectServicesModel.swift in Sources */,
-				4B6F4B80295783CE00D67D79 /* CustomTimer.swift in Sources */,
+				4B6F4B80295783CE00D67D79 /* FoundationPSTimer.swift in Sources */,
 				4B7AE5AD296B46230060AD41 /* CustomLabel.swift in Sources */,
 				4B7AE5A5296B42160060AD41 /* HomeView.swift in Sources */,
 				60CE81AB2977618D009667C5 /* SelectServiceViewModel.swift in Sources */,
@@ -518,7 +529,7 @@
 				4BCB961D29565FF400B15A58 /* HomeViewModel.swift in Sources */,
 				60CE81B529776FF0009667C5 /* SystemImageName.swift in Sources */,
 				4C55034929379F3600699589 /* HomeViewController.swift in Sources */,
-				4B20FF97295697DB0038955D /* ServiceModel.swift in Sources */,
+				4B20FF97295697DB0038955D /* PoliServiceViewModel.swift in Sources */,
 				4BF27F28296BA9ED0097637D /* ServiceCollectionViewCell.swift in Sources */,
 				60CA6237297CAAE80056C56E /* Data+Extension.swift in Sources */,
 				601B78602985D10200BFAA98 /* URLSessionGetClient.swift in Sources */,
@@ -532,6 +543,7 @@
 				4B94CE7D296B56B700144E87 /* LastServiceView.swift in Sources */,
 				601B78582985C5A800BFAA98 /* PSError.swift in Sources */,
 				4B94CE7B296B52F700144E87 /* CustomDividerView.swift in Sources */,
+				60CF17FB2987024900340F3C /* PSTimer.swift in Sources */,
 				4C55034529379F3600699589 /* AppDelegate.swift in Sources */,
 				607487BF2981ED7600009F02 /* PoliServiceModel.swift in Sources */,
 				4BF27F26296BA2A00097637D /* SelectServiceView.swift in Sources */,

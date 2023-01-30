@@ -8,12 +8,13 @@ class SelectDateView: UIView {
         }
     }
     
-    private lazy var selectDateTitleLabel = CustomLabel(text: "Selecione a data e hora para reservar",
-                                                        size: 28)
+    private lazy var selectDateTitleLabel = CustomLabel(
+        text: "Selecione a data e hora para reservar",
+        size: 28
+    )
     
     private lazy var selectDatePicker: UIDatePicker = {
         let datePicker = UIDatePicker()
-        
         datePicker.translatesAutoresizingMaskIntoConstraints = false
         datePicker.datePickerMode = .dateAndTime
         datePicker.locale = Locale(identifier: "pt_BR")
@@ -23,10 +24,10 @@ class SelectDateView: UIView {
         
         if #available(iOS 14.0, *) {
             datePicker.preferredDatePickerStyle = .inline
-        }
-        
-        if #available(iOS 13.4, *) {
-            datePicker.preferredDatePickerStyle = .automatic
+        } else {
+            if #available(iOS 13.4, *) {
+                datePicker.preferredDatePickerStyle = .automatic
+            }
         }
         
         return datePicker
@@ -45,14 +46,11 @@ class SelectDateView: UIView {
     private func configureView() {
         
         configureSelectDateTitleLabel()
-        
         configureSelectDatePicker()
-        
         additionalConfiguration()
     }
     
     private func configureSelectDateTitleLabel() {
-        
         addSubview(selectDateTitleLabel)
         
         NSLayoutConstraint.activate([
@@ -63,7 +61,6 @@ class SelectDateView: UIView {
     }
     
     private func configureSelectDatePicker() {
-        
         addSubview(selectDatePicker)
         
         NSLayoutConstraint.activate([
@@ -74,7 +71,6 @@ class SelectDateView: UIView {
     }
     
     private func additionalConfiguration() {
-        
         backgroundColor = .mainBackground
     }
 }

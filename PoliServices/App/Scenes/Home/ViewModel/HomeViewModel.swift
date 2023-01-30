@@ -2,17 +2,33 @@ import Foundation
 
 class HomeViewModel: HomeViewModelProtocol {
     
-    weak var delegate: HomeViewModelDelegate?
-    
     var currentDate: CurrentDate
+    var timer: PSTimer = FoundationPSTimer()
     
-    init(currentDateProvider: CurrentDate) {
-        self.currentDate = currentDateProvider
-    }
-    
+    weak var delegate: HomeViewModelDelegate?
     weak var scheduledServiceDelegate: ScheduledServiceDelegate?
     
-    var customTimer: CustomTimerProtocol = CustomTimer()
+    
+    init(
+        currentDateProvider: CurrentDate,
+        timerProvider: PSTimer
+    ) {
+        self.currentDate = currentDateProvider
+        self.timer = timerProvider
+    }
+    
+    func getDescriptionLabel(_ completion: (String) -> Void) {
+        
+        let descriptionText = DescriptionModel.description
+        
+        completion(descriptionText)
+    }
+    
+
+}
+
+//MARK: - CurrentDate
+extension HomeViewModel {
     
     func getCurrentDate() {
         
@@ -28,50 +44,52 @@ class HomeViewModel: HomeViewModelProtocol {
             self.delegate?.didGet(currentDateString)
         }
     }
+}
+
+//MARK: - PSTimer
+extension HomeViewModel {
     
-    func getDescriptionLabel(_ completion: (String) -> Void) {
-        
-        let descriptionText = DescriptionModel.description
-        
-        completion(descriptionText)
-    }
-    
-    func startTimer() {
-        
-        customTimer.startTimer { [weak self] in
+    func startTimer(duration: Double) {
+
+        timer.start(duration: duration) { [weak self] in
             
             guard let self = self else { return }
-            
-            self.getScheduledService()
+            self.checkScheduledPoliService()
         }
     }
 }
 
 extension HomeViewModel: ScheduledServiceProtocol {
     
-    func getScheduledService() {
-    
-        let currentDate = Date()
+    func checkScheduledPoliService() {
         
-        let serviceDateInteger = UserDefaults.standard.double(forKey: ServiceKeys.serviceDate.rawValue)
+        // TODO: add an use case that know how to retrieve data from a local repository
+        let poliServiceDateIntervalSince1970 = UserDefaults.standard.double(forKey: ServiceKeys.serviceDate.rawValue)
         
-        let serviceDate = Date(timeIntervalSince1970: TimeInterval(serviceDateInteger))
-        
-        let hasService = serviceDate >= currentDate
-        
-        if hasService {
-            guard let serviceName = UserDefaults.standard.string(forKey: ServiceKeys.serviceName.rawValue) else { return }
-
-            let service = ServiceModel(
-                serviceDate: serviceDate.toStandardString(),
-                serviceName: serviceName
-            )
+        if poliServiceDateIntervalSince1970 != 0 {
             
-            scheduledServiceDelegate?.didGetScheduledService(service: service)
+            let poliServiceDate = Date(timeIntervalSince1970: poliServiceDateIntervalSince1970)
+            let hasService = poliServiceDate >= Date()
+            
+            if hasService {
+                guard let serviceName = UserDefaults.standard.string(forKey: ServiceKeys.serviceName.rawValue) else { return }
+                
+                let serviceViewModel = PoliServiceViewModel(
+                    name: serviceName,
+                    date: poliServiceDate.toStandardString()
+                )
+                
+                let timeLeft = poliServiceDate.timeIntervalSinceNow
+                startTimer(duration: timeLeft)
+                
+                scheduledServiceDelegate?.didGetScheduledService(service: serviceViewModel)
+            } else {
+                UserDefaults.standard.removeObject(forKey: ServiceKeys.serviceDate.rawValue)
+                UserDefaults.standard.removeObject(forKey: ServiceKeys.serviceName.rawValue)
+                
+                scheduledServiceDelegate?.noScheduledService()
+            }
         } else {
-            UserDefaults.standard.removeObject(forKey: ServiceKeys.serviceDate.rawValue)
-            UserDefaults.standard.removeObject(forKey: ServiceKeys.serviceName.rawValue)
-            
             scheduledServiceDelegate?.noScheduledService()
         }
     }

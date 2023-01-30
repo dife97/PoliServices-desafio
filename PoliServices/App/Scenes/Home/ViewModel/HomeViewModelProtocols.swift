@@ -8,11 +8,11 @@ protocol HomeViewModelProtocol: ScheduledServiceProtocol {
     func getCurrentDate()
     
     // MARK: - Timer
-    var customTimer: CustomTimerProtocol { get }
-
+    var timer: PSTimer { get }
+    func startTimer(duration: Double)
+    
+    // MARK: - Description Label
     func getDescriptionLabel(_ completion: (String) -> Void)
-
-    func startTimer()
 }
 
 protocol HomeViewModelDelegate: AnyObject {
@@ -27,12 +27,12 @@ protocol ScheduledServiceProtocol {
     
     var scheduledServiceDelegate: ScheduledServiceDelegate? { get }
     
-    func getScheduledService()
+    func checkScheduledPoliService()
 }
 
 protocol ScheduledServiceDelegate: AnyObject {
     
-    func didGetScheduledService(service: ServiceModel)
+    func didGetScheduledService(service: PoliServiceViewModel)
     
     func noScheduledService()
 }

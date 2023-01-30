@@ -21,7 +21,14 @@ class SelectDateViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private lazy var selectDateView = SelectDateView()
+    private lazy var selectDateView: SelectDateView = {
+        let view = SelectDateView()
+        view.didChangeTime = { [unowned self] in
+            self.configureEstimatedTimeLabels()
+        }
+        
+        return view
+    }()
 
     override func loadView() {
         view = selectDateView
@@ -49,6 +56,20 @@ class SelectDateViewController: UIViewController {
     @objc private func didTapSaveButton() {
         
         viewModel.saveService(timeIntervalSince1970: selectDateView.timeIntervalSince1970)
+    }
+    
+    private func configureEstimatedTimeLabels() {
+        
+        let duration = viewModel.poliService.duration
+        let dateTimeInterval = selectDateView.timeIntervalSince1970 + duration * 60
+        let date = Date(timeIntervalSince1970: dateTimeInterval)
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "HH:mm"
+        
+        let estimatedEndText = dateFormatter.string(from: date)
+        
+        selectDateView.configureDurationLabels(durationText: "\(Int(duration))",
+                                               estimatedEndText: estimatedEndText)
     }
 }
 

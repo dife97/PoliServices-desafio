@@ -2,6 +2,8 @@ import UIKit
 
 class SelectDateView: UIView {
     
+    var didChangeTime: (() -> Void)?
+    
     var timeIntervalSince1970: TimeInterval {
         get {
             selectDatePicker.date.timeIntervalSince1970
@@ -30,7 +32,23 @@ class SelectDateView: UIView {
             }
         }
         
+        datePicker.addTarget(self, action: #selector(didChangeDatePickerValue), for: .valueChanged)
+        
         return datePicker
+    }()
+    
+    private lazy var durationLabel: CustomLabel = {
+        let label = CustomLabel(text: "Duração: 30 minutos")
+        label.isHidden = true
+        
+        return label
+    }()
+    
+    private lazy var estimatedEndTimeLabel: CustomLabel = {
+        let label = CustomLabel(text: "Previsão de encerramento: 10:30")
+        label.isHidden = true
+        
+        return label
     }()
     
     override init(frame: CGRect) {
@@ -72,5 +90,31 @@ class SelectDateView: UIView {
     
     private func additionalConfiguration() {
         backgroundColor = .mainBackground
+    }
+    
+    @objc
+    private func didChangeDatePickerValue(_ datePicker: UIDatePicker) {
+        
+        didChangeTime?()
+    }
+    
+    func configureDurationLabels(durationText: String, estimatedEndText: String) {
+        
+        durationLabel.text = "Duração: \(durationText) minutos"
+        durationLabel.isHidden = false
+        
+        estimatedEndTimeLabel.text = "Previsão de encerramento: \(estimatedEndText)" 
+        estimatedEndTimeLabel.isHidden = false
+        
+        addSubview(durationLabel)
+        addSubview(estimatedEndTimeLabel)
+        
+        NSLayoutConstraint.activate([
+            durationLabel.topAnchor.constraint(equalTo: selectDatePicker.bottomAnchor, constant: 32),
+            durationLabel.leadingAnchor.constraint(equalTo: selectDateTitleLabel.leadingAnchor),
+            
+            estimatedEndTimeLabel.topAnchor.constraint(equalTo: durationLabel.bottomAnchor, constant: 8),
+            estimatedEndTimeLabel.leadingAnchor.constraint(equalTo: selectDateTitleLabel.leadingAnchor),
+        ])
     }
 }

@@ -92,7 +92,7 @@ extension HomeViewController: ScheduledServiceDelegate {
     func didGetScheduledService(service: PoliServiceViewModel) {
         
         homeView.serviceNameText = service.name
-        homeView.serviceDateText = service.date
+        homeView.serviceDateText = "\(service.date) - \(service.statusMessage)"
         homeView.configureServiceView(hasService: true)
     }
 

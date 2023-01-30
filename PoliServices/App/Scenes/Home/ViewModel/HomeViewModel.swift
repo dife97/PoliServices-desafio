@@ -67,10 +67,13 @@ extension HomeViewModel: ScheduledServiceProtocol {
             
             if hasService {
                 guard let serviceName = UserDefaults.standard.string(forKey: PoliServiceKeys.name.rawValue) else { return }
+                let poliServiceTimeInterval = UserDefaults.standard.double(forKey: PoliServiceKeys.timeIntervalSince1970.rawValue)
+                let poliServiceDate = Date(timeIntervalSince1970: poliServiceTimeInterval)
                 
                 let serviceViewModel = PoliServiceViewModel(
                     name: serviceName,
-                    date: deadlineDate.toStandardString()
+                    date: poliServiceDate.toStandardString(),
+                    statusMessage: "Diego Lindo"
                 )
                 
                 let timeLeft = deadlineDate.timeIntervalSinceNow

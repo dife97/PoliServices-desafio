@@ -4,4 +4,5 @@ struct PoliServiceViewModel {
     let date: String
     let statusMessage: String
     let hexColor: String
+    let icon: String
 }

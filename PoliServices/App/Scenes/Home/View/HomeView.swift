@@ -32,6 +32,12 @@ class HomeView: UIView {
         }
     }
     
+    var serviceImageViewName: String? {
+        didSet {
+            lastServiceView.serviceBookImageName = serviceImageViewName
+        }
+    }
+    
     var serviceButtonAction: (() -> Void)?
     
     private lazy var welcomeLabel = CustomLabel(

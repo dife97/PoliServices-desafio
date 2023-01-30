@@ -20,6 +20,18 @@ class LastServiceView: UIView {
         }
     }
     
+    var serviceBookImageName: String? {
+        didSet {
+            guard let serviceImageName = serviceBookImageName else { return }
+
+            if #available(iOS 13.0, *) {
+                serviceBookImageView.image = UIImage(systemName: serviceImageName)
+            } else {
+                serviceBookImageView.image = UIImage(named: "generic.service.name")
+            }
+        }
+    }
+    
     private lazy var nextServiceLabel = CustomLabel(
         text: "Próximo Serviço",
         size: 16,
@@ -55,7 +67,7 @@ class LastServiceView: UIView {
         textColor: .white
     )
     
-    private lazy var serviceBookImageView = CustomImageView(systemImageName: "book.fill")
+    private lazy var serviceBookImageView = CustomImageView()
     
     override init(frame: CGRect) {
         super.init(frame: frame)

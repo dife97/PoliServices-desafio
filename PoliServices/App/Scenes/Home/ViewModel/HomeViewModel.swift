@@ -125,12 +125,14 @@ extension HomeViewModel: ScheduledServiceProtocol {
                 
                 guard let serviceName = UserDefaults.standard.string(forKey: PoliServiceKeys.name.rawValue) else { return }
                 guard let hexColor = UserDefaults.standard.string(forKey: PoliServiceKeys.color.rawValue) else { return }
+                guard let icon = UserDefaults.standard.string(forKey: PoliServiceKeys.icon.rawValue) else { return }
                 
                 let serviceViewModel = PoliServiceViewModel(
                     name: serviceName,
                     date: poliServiceDate.toStandardString(),
                     statusMessage: statusMessage,
-                    hexColor: hexColor
+                    hexColor: hexColor,
+                    icon: icon
                 )
                 
                 let timeLeftToDeadline: Double = deadlineDate.timeIntervalSinceNow

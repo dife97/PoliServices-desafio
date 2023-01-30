@@ -34,14 +34,18 @@ class HomeView: UIView {
     
     var serviceButtonAction: (() -> Void)?
     
-    private lazy var welcomeLabel = CustomLabel(text: "Bem-Vindo ao DevServices",
-                                                size: 32,
-                                                weight: .bold)
+    private lazy var welcomeLabel = CustomLabel(
+        text: "Bem-Vindo ao DevServices",
+        size: 32,
+        weight: .bold
+    )
     
-    private lazy var currentDateLabel = CustomLabel(text: "31 de dezembro de 1999",
-                                                    size: 13,
-                                                    weight: .thin,
-                                                    textColor: .darkGray)
+    private lazy var currentDateLabel = CustomLabel(
+        text: "31 de dezembro de 1999",
+        size: 13,
+        weight: .thin,
+        textColor: .darkGray
+    )
     
     private lazy var descriptionView = DescriptionView()
     
@@ -49,7 +53,6 @@ class HomeView: UIView {
     
     private lazy var serviceStackView: UIStackView = {
         let stackView = UIStackView()
-        
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
         stackView.spacing = 22
@@ -67,9 +70,7 @@ class HomeView: UIView {
     
     private lazy var newServiceButton: CustomButton = {
         let button = CustomButton(title: "Solicitar novo serviço")
-
         button.action = { [unowned self] in
-            
             self.serviceButtonAction?()
         }
         
@@ -89,15 +90,10 @@ class HomeView: UIView {
     private func configureView() {
         
         configureWelcomeLabel()
-        
         configureCurrentDateLabel()
-        
         configureDescriptionView()
-        
         configureDividerView()
-        
         configureServiceStackView()
-        
         additionalConfiguration()
     }
     
@@ -164,13 +160,14 @@ class HomeView: UIView {
     func configureServiceView(hasService: Bool) {
         
         DispatchQueue.main.async { [weak self] in
+            guard let self else { return }
             
             UIView.animate(withDuration: 0.3) {
-                self?.lastServiceView.alpha = hasService ? 1 : 0
-                self?.lastServiceView.isHidden = hasService ? false : true
+                self.lastServiceView.alpha = hasService ? 1 : 0
+                self.lastServiceView.isHidden = hasService ? false : true
 
-                self?.newServiceButton.alpha = hasService ? 0 : 1
-                self?.newServiceButton.isHidden = hasService ? true : false
+                self.newServiceButton.alpha = hasService ? 0 : 1
+                self.newServiceButton.isHidden = hasService ? true : false
             }
         }
     }

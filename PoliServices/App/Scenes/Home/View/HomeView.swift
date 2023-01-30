@@ -7,22 +7,28 @@ class HomeView: UIView {
             currentDateLabel.text = currentDateLabelText
         }
     }
-    
+
     var descriptionText: String? {
         didSet {
             descriptionView.descriptionText = descriptionText
         }
     }
-    
+
     var serviceNameText: String? {
         didSet {
             lastServiceView.serviceNameText = serviceNameText
         }
     }
-    
+
     var serviceDateText: String? {
         didSet {
             lastServiceView.serviceDateText = serviceDateText
+        }
+    }
+    
+    var serviceHexColor: String? {
+        didSet {
+            lastServiceView.hexBackgroundColor = serviceHexColor
         }
     }
     
@@ -54,7 +60,6 @@ class HomeView: UIView {
     
     private lazy var lastServiceView: LastServiceView = {
         let view = LastServiceView()
-        
         view.alpha = 0
         
         return view

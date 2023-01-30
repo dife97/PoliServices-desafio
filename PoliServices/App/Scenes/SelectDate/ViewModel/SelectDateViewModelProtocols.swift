@@ -1,7 +1,7 @@
 protocol SelectDateViewModelProtocol {
     
     var delegate: SelectDateViewDelegate? { get set }
-    var serviceName: String { get }
+    var poliService: PoliServiceModel { get }
     
     func saveService(timeIntervalSince1970: Double)
 }

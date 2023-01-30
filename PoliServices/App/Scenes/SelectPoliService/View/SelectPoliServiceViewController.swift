@@ -64,10 +64,7 @@ extension SelectPoliServiceViewController: UICollectionViewDelegate {
         
         let poliService = viewModel.poliServices[indexPath.row]
         
-        let selectDateViewController = selectDateViewControllerFactory(
-            serviceName: poliService.name,
-            duration: Double(poliService.duration)
-        )
+        let selectDateViewController = selectDateViewControllerFactory(poliService: poliService)
 
         navigationController?.pushViewController(selectDateViewController, animated: true)
     }
@@ -114,14 +111,16 @@ extension SelectPoliServiceViewController: SelectPoliServiceViewDelegate {
 
 extension SelectPoliServiceViewController {
     
-    func selectDateViewControllerFactory(serviceName: String,
-                                         duration: Double) -> UIViewController {
+    func selectDateViewControllerFactory(poliService: PoliServiceModel) -> UIViewController {
         
-        let selectDateViewModel = SelectDateViewModel(
-            serviceName: serviceName,
-            duration: duration
+        let poliServiceModel = PoliServiceModel(
+            name: poliService.name,
+            icon: poliService.icon,
+            color: poliService.color,
+            duration: poliService.duration
         )
         
+        let selectDateViewModel = SelectDateViewModel(poliService: poliServiceModel)
         let selectDateViewController = SelectDateViewController(viewModel: selectDateViewModel)
         selectDateViewModel.delegate = selectDateViewController
         

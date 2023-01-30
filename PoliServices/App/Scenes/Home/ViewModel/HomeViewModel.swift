@@ -69,11 +69,13 @@ extension HomeViewModel: ScheduledServiceProtocol {
                 guard let serviceName = UserDefaults.standard.string(forKey: PoliServiceKeys.name.rawValue) else { return }
                 let poliServiceTimeInterval = UserDefaults.standard.double(forKey: PoliServiceKeys.timeIntervalSince1970.rawValue)
                 let poliServiceDate = Date(timeIntervalSince1970: poliServiceTimeInterval)
+                guard let hexColor = UserDefaults.standard.string(forKey: PoliServiceKeys.color.rawValue) else { return }
                 
                 let serviceViewModel = PoliServiceViewModel(
                     name: serviceName,
                     date: poliServiceDate.toStandardString(),
-                    statusMessage: "Diego Lindo"
+                    statusMessage: "Diego Lindo",
+                    hexColor: hexColor
                 )
                 
                 let timeLeft = deadlineDate.timeIntervalSinceNow
@@ -84,6 +86,8 @@ extension HomeViewModel: ScheduledServiceProtocol {
                 UserDefaults.standard.removeObject(forKey: PoliServiceKeys.name.rawValue)
                 UserDefaults.standard.removeObject(forKey: PoliServiceKeys.duration.rawValue)
                 UserDefaults.standard.removeObject(forKey: PoliServiceKeys.timeIntervalSince1970.rawValue)
+                UserDefaults.standard.removeObject(forKey: PoliServiceKeys.color.rawValue)
+                UserDefaults.standard.removeObject(forKey: PoliServiceKeys.icon.rawValue)
                 
                 scheduledServiceDelegate?.noScheduledService()
             }

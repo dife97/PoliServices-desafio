@@ -2,7 +2,7 @@ struct PoliServiceModel: Codable {
     let name: String
     let icon: String
     let color: String
-    let duration: Int
+    let duration: Double
 }
 
 typealias PoliServices = [PoliServiceModel]

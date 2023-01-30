@@ -14,34 +14,46 @@ class LastServiceView: UIView {
         }
     }
     
-    private lazy var nextServiceLabel = CustomLabel(text: "Próximo Serviço",
-                                                    size: 16,
-                                                    weight: .bold)
+    var hexBackgroundColor: String? {
+        didSet {
+            innerView.backgroundColor = UIColor(hex: hexBackgroundColor ?? "") ?? .cyan
+        }
+    }
+    
+    private lazy var nextServiceLabel = CustomLabel(
+        text: "Próximo Serviço",
+        size: 16,
+        weight: .bold
+    )
     
     private lazy var innerView: UIView = {
         let view = UIView()
-        
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .systemTeal
         view.layer.cornerRadius = 12
         view.clipsToBounds = true
         
         return view
     }()
     
-    private lazy var serviceNameLabel = CustomLabel(text: "Nome do serviço",
-                                                    size: 20,
-                                                    weight: .bold,
-                                                    textColor: .white)
+    private lazy var serviceNameLabel = CustomLabel(
+        text: "Nome do serviço",
+        size: 20,
+        weight: .bold,
+        textColor: .white
+    )
     
-    private lazy var serviceDateTitleLabel = CustomLabel(text: "Data e hora",
-                                                         size: 12,
-                                                         textColor: .white)
+    private lazy var serviceDateTitleLabel = CustomLabel(
+        text: "Data e hora",
+        size: 12,
+        textColor: .white
+    )
     
-    private lazy var serviceDateLabel = CustomLabel(text: "30/11 às 19h",
-                                                    size: 12,
-                                                    weight: .bold,
-                                                    textColor: .white)
+    private lazy var serviceDateLabel = CustomLabel(
+        text: "30/11 às 19h",
+        size: 12,
+        weight: .bold,
+        textColor: .white
+    )
     
     private lazy var serviceBookImageView = CustomImageView(systemImageName: "book.fill")
     
@@ -58,13 +70,9 @@ class LastServiceView: UIView {
     private func configureView() {
         
         configureNextServiceLabel()
-        
         configureInnerView()
-        
         configureServiceBookImageView()
-        
         configureInneViewLabels()
-        
         additionalConfiguration()
     }
     
@@ -126,7 +134,6 @@ class LastServiceView: UIView {
     private func additionalConfiguration() {
         
         translatesAutoresizingMaskIntoConstraints = false
-        
         backgroundColor = .orange
     }
 }

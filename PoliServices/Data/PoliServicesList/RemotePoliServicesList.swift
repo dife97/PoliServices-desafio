@@ -26,7 +26,7 @@ class RemotePoliServicesList: PoliServicesList {
                             name: remotePoliService.name,
                             icon: remotePoliService.icon,
                             color: remotePoliService.color,
-                            duration: remotePoliService.duration
+                            duration: Double(remotePoliService.duration)
                         )
                         
                         poliServices.append(poliService)

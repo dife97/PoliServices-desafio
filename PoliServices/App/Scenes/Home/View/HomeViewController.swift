@@ -93,6 +93,7 @@ extension HomeViewController: ScheduledServiceDelegate {
         
         homeView.serviceNameText = service.name
         homeView.serviceDateText = "\(service.date) - \(service.statusMessage)"
+        homeView.serviceHexColor = service.hexColor
         homeView.configureServiceView(hasService: true)
     }
 

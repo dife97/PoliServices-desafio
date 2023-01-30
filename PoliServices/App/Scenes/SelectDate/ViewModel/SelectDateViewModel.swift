@@ -6,22 +6,30 @@ class SelectDateViewModel: SelectDateViewModelProtocol {
     
     var delegate: SelectDateViewDelegate?
     
-    var serviceName: String
+    let serviceName: String
+    let duration: Double
     
-    init(serviceName: String) {
+    init(
+        serviceName: String,
+        duration: Double
+    ) {
         self.serviceName = serviceName
+        self.duration = duration
     }
     
-    func saveService(name: String, date: TimeInterval) {
+    func saveService(timeIntervalSince1970: Double) {
         
-        let scheduledService = ScheduledServiceModel(name: name, date: date)
+        let durationTimeInterval = timeIntervalSince1970 + duration * 60
         
-        userDefaults.set(scheduledService.name,
-                         forKey: ServiceKeys.serviceName.rawValue)
+        userDefaults.set(serviceName,
+                         forKey: PoliServiceKeys.name.rawValue)
         
-        userDefaults.set(scheduledService.date,
-                         forKey: ServiceKeys.serviceDate.rawValue)
+        userDefaults.set(durationTimeInterval,
+                         forKey: PoliServiceKeys.duration.rawValue)
         
-        delegate?.didSaveService()
+        userDefaults.set(timeIntervalSince1970,
+                         forKey: PoliServiceKeys.timeIntervalSince1970.rawValue)
+        
+        delegate?.didSavePoliService()
     }
 }

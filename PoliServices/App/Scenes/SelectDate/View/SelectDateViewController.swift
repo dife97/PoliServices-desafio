@@ -47,14 +47,14 @@ class SelectDateViewController: UIViewController {
     }
     
     @objc private func didTapSaveButton() {
-        viewModel.saveService(name: viewModel.serviceName,
-                              date: selectDateView.timeIntervalSince1970)
+        
+        viewModel.saveService(timeIntervalSince1970: selectDateView.timeIntervalSince1970)
     }
 }
 
 extension SelectDateViewController: SelectDateViewDelegate {
     
-    func didSaveService() {
+    func didSavePoliService() {
         dismiss(animated: true)
     }
 }

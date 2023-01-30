@@ -62,13 +62,12 @@ extension SelectPoliServiceViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView,
                         didSelectItemAt indexPath: IndexPath) {
         
-        let cell = getServiceCollectionViewCell(from: collectionView, indexPath: indexPath)
+        let poliService = viewModel.poliServices[indexPath.row]
         
-        guard let serviceName = cell.serviceNameText else {
-            fatalError()
-        }
-        
-        let selectDateViewController = selectDateViewControllerFactory(serviceName: serviceName)
+        let selectDateViewController = selectDateViewControllerFactory(
+            serviceName: poliService.name,
+            duration: Double(poliService.duration)
+        )
 
         navigationController?.pushViewController(selectDateViewController, animated: true)
     }
@@ -115,8 +114,14 @@ extension SelectPoliServiceViewController: SelectPoliServiceViewDelegate {
 
 extension SelectPoliServiceViewController {
     
-    func selectDateViewControllerFactory(serviceName: String) -> UIViewController {
-        let selectDateViewModel = SelectDateViewModel(serviceName: serviceName)
+    func selectDateViewControllerFactory(serviceName: String,
+                                         duration: Double) -> UIViewController {
+        
+        let selectDateViewModel = SelectDateViewModel(
+            serviceName: serviceName,
+            duration: duration
+        )
+        
         let selectDateViewController = SelectDateViewController(viewModel: selectDateViewModel)
         selectDateViewModel.delegate = selectDateViewController
         
@@ -133,7 +138,12 @@ extension SelectPoliServiceViewController {
         
         let poliService = viewModel.poliServices[indexPath.row]
         
-        guard let serviceCollectionViewCell = cell as? ServiceCollectionViewCell else { return ServiceCollectionViewCell() }
+        guard
+            let serviceCollectionViewCell = cell as? ServiceCollectionViewCell
+        else {
+            return ServiceCollectionViewCell()
+        }
+        
         serviceCollectionViewCell.configure(with: poliService)
         
         return serviceCollectionViewCell

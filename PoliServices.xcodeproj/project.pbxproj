@@ -10,7 +10,7 @@
 		4B15571C296B746C001C8C7F /* CustomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B15571B296B746C001C8C7F /* CustomImageView.swift */; };
 		4B15571E296B7B0D001C8C7F /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B15571D296B7B0D001C8C7F /* CustomButton.swift */; };
 		4B20FF97295697DB0038955D /* PoliServiceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B20FF96295697DB0038955D /* PoliServiceViewModel.swift */; };
-		4B20FF99295697F20038955D /* ServiceKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B20FF98295697F20038955D /* ServiceKeys.swift */; };
+		4B20FF99295697F20038955D /* PoliServiceKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B20FF98295697F20038955D /* PoliServiceKeys.swift */; };
 		4B5F6C902969C54B00F1D14B /* DescriptionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B5F6C8F2969C54B00F1D14B /* DescriptionModel.swift */; };
 		4B6F4B80295783CE00D67D79 /* FoundationPSTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6F4B7F295783CE00D67D79 /* FoundationPSTimer.swift */; };
 		4B7AE5A5296B42160060AD41 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7AE5A4296B42160060AD41 /* HomeView.swift */; };
@@ -49,7 +49,7 @@
 		60CE81B529776FF0009667C5 /* SystemImageName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60CE81B429776FF0009667C5 /* SystemImageName.swift */; };
 		60CE81BC29777EB1009667C5 /* SelectDateViewModelProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60CE81BB29777EB1009667C5 /* SelectDateViewModelProtocols.swift */; };
 		60CE81BE29777EC2009667C5 /* SelectDateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60CE81BD29777EC2009667C5 /* SelectDateViewModel.swift */; };
-		60CE81C0297784D1009667C5 /* ScheduledServiceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60CE81BF297784D1009667C5 /* ScheduledServiceModel.swift */; };
+		60CE81C0297784D1009667C5 /* ServiceDateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60CE81BF297784D1009667C5 /* ServiceDateModel.swift */; };
 		60CE81C329778B78009667C5 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60CE81C229778B78009667C5 /* Date+Extension.swift */; };
 		60CF17FB2987024900340F3C /* PSTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60CF17FA2987024900340F3C /* PSTimer.swift */; };
 /* End PBXBuildFile section */
@@ -58,7 +58,7 @@
 		4B15571B296B746C001C8C7F /* CustomImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomImageView.swift; sourceTree = "<group>"; };
 		4B15571D296B7B0D001C8C7F /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		4B20FF96295697DB0038955D /* PoliServiceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoliServiceViewModel.swift; sourceTree = "<group>"; };
-		4B20FF98295697F20038955D /* ServiceKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceKeys.swift; sourceTree = "<group>"; };
+		4B20FF98295697F20038955D /* PoliServiceKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoliServiceKeys.swift; sourceTree = "<group>"; };
 		4B5F6C8F2969C54B00F1D14B /* DescriptionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionModel.swift; sourceTree = "<group>"; };
 		4B6F4B7F295783CE00D67D79 /* FoundationPSTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoundationPSTimer.swift; sourceTree = "<group>"; };
 		4B7AE5A4296B42160060AD41 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -99,7 +99,7 @@
 		60CE81B429776FF0009667C5 /* SystemImageName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemImageName.swift; sourceTree = "<group>"; };
 		60CE81BB29777EB1009667C5 /* SelectDateViewModelProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectDateViewModelProtocols.swift; sourceTree = "<group>"; };
 		60CE81BD29777EC2009667C5 /* SelectDateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectDateViewModel.swift; sourceTree = "<group>"; };
-		60CE81BF297784D1009667C5 /* ScheduledServiceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduledServiceModel.swift; sourceTree = "<group>"; };
+		60CE81BF297784D1009667C5 /* ServiceDateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceDateModel.swift; sourceTree = "<group>"; };
 		60CE81C229778B78009667C5 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		60CF17FA2987024900340F3C /* PSTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSTimer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -148,7 +148,7 @@
 			children = (
 				4B20FF96295697DB0038955D /* PoliServiceViewModel.swift */,
 				4B5F6C8F2969C54B00F1D14B /* DescriptionModel.swift */,
-				4B20FF98295697F20038955D /* ServiceKeys.swift */,
+				4B20FF98295697F20038955D /* PoliServiceKeys.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -417,7 +417,7 @@
 		60CE81BA29777E88009667C5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				60CE81BF297784D1009667C5 /* ScheduledServiceModel.swift */,
+				60CE81BF297784D1009667C5 /* ServiceDateModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -524,7 +524,7 @@
 				607487B12981E08900009F02 /* CurrentDateModel.swift in Sources */,
 				4C30F0A829391842002C3068 /* SelectDateViewController.swift in Sources */,
 				4BCB961F2956602700B15A58 /* HomeViewModelProtocols.swift in Sources */,
-				60CE81C0297784D1009667C5 /* ScheduledServiceModel.swift in Sources */,
+				60CE81C0297784D1009667C5 /* ServiceDateModel.swift in Sources */,
 				60CE81C329778B78009667C5 /* Date+Extension.swift in Sources */,
 				4BCB961D29565FF400B15A58 /* HomeViewModel.swift in Sources */,
 				60CE81B529776FF0009667C5 /* SystemImageName.swift in Sources */,
@@ -551,7 +551,7 @@
 				4C5503592937D32A00699589 /* SelectPoliServiceViewController.swift in Sources */,
 				607487AC2981E04500009F02 /* CurrentDate.swift in Sources */,
 				601B78532985BFF300BFAA98 /* PSMonth.swift in Sources */,
-				4B20FF99295697F20038955D /* ServiceKeys.swift in Sources */,
+				4B20FF99295697F20038955D /* PoliServiceKeys.swift in Sources */,
 				4B94CE76296B4D7700144E87 /* DescriptionView.swift in Sources */,
 				60CE81AD297761B7009667C5 /* SelectServiceViewModelProtocols.swift in Sources */,
 			);

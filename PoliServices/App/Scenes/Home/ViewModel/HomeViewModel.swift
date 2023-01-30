@@ -4,10 +4,8 @@ class HomeViewModel: HomeViewModelProtocol {
     
     var currentDate: CurrentDate
     var timer: PSTimer = FoundationPSTimer()
-    
     weak var delegate: HomeViewModelDelegate?
     weak var scheduledServiceDelegate: ScheduledServiceDelegate?
-    
     
     init(
         currentDateProvider: CurrentDate,
@@ -20,11 +18,8 @@ class HomeViewModel: HomeViewModelProtocol {
     func getDescriptionLabel(_ completion: (String) -> Void) {
         
         let descriptionText = DescriptionModel.description
-        
         completion(descriptionText)
     }
-    
-
 }
 
 //MARK: - CurrentDate
@@ -64,28 +59,28 @@ extension HomeViewModel: ScheduledServiceProtocol {
     func checkScheduledPoliService() {
         
         // TODO: add an use case that know how to retrieve data from a local repository
-        let poliServiceDateIntervalSince1970 = UserDefaults.standard.double(forKey: ServiceKeys.serviceDate.rawValue)
-        
-        if poliServiceDateIntervalSince1970 != 0 {
-            
-            let poliServiceDate = Date(timeIntervalSince1970: poliServiceDateIntervalSince1970)
-            let hasService = poliServiceDate >= Date()
+        let deadline = UserDefaults.standard.double(forKey: PoliServiceKeys.duration.rawValue)
+
+        if deadline != 0 {
+            let deadlineDate = Date(timeIntervalSince1970: deadline)
+            let hasService = deadlineDate >= Date()
             
             if hasService {
-                guard let serviceName = UserDefaults.standard.string(forKey: ServiceKeys.serviceName.rawValue) else { return }
+                guard let serviceName = UserDefaults.standard.string(forKey: PoliServiceKeys.name.rawValue) else { return }
                 
                 let serviceViewModel = PoliServiceViewModel(
                     name: serviceName,
-                    date: poliServiceDate.toStandardString()
+                    date: deadlineDate.toStandardString()
                 )
                 
-                let timeLeft = poliServiceDate.timeIntervalSinceNow
+                let timeLeft = deadlineDate.timeIntervalSinceNow
                 startTimer(duration: timeLeft)
                 
                 scheduledServiceDelegate?.didGetScheduledService(service: serviceViewModel)
             } else {
-                UserDefaults.standard.removeObject(forKey: ServiceKeys.serviceDate.rawValue)
-                UserDefaults.standard.removeObject(forKey: ServiceKeys.serviceName.rawValue)
+                UserDefaults.standard.removeObject(forKey: PoliServiceKeys.name.rawValue)
+                UserDefaults.standard.removeObject(forKey: PoliServiceKeys.duration.rawValue)
+                UserDefaults.standard.removeObject(forKey: PoliServiceKeys.timeIntervalSince1970.rawValue)
                 
                 scheduledServiceDelegate?.noScheduledService()
             }

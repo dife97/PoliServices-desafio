@@ -68,7 +68,7 @@ extension HomeViewModel: ScheduledServiceProtocol {
             if hasService {
                 let poliServiceTimeInterval = UserDefaults.standard.double(forKey: PoliServiceKeys.timeIntervalSince1970.rawValue)
                 let poliServiceDate = Date(timeIntervalSince1970: poliServiceTimeInterval)
-                let timeLeftToDate: Double = poliServiceDate.timeIntervalSinceNow
+                let timeLeftToDate = Int(poliServiceDate.timeIntervalSinceNow)
                 var statusMessage: String
                 
                 switch timeLeftToDate {
@@ -76,12 +76,12 @@ extension HomeViewModel: ScheduledServiceProtocol {
                     statusMessage = "Em andamento"
                 
                 case 0...3600:
-                    let leftTime = Int(timeLeftToDate/60)
+                    let leftTime = Int(timeLeftToDate / 60) + 1
                     
                     if leftTime == 1 {
-                        statusMessage = "Falta \(Int(timeLeftToDate/60)) minuto para o atendimento"
+                        statusMessage = "Falta \(leftTime) minuto para o atendimento"
                     } else {
-                        statusMessage = "Faltam \(Int(timeLeftToDate/60)) minutos para o atendimento"
+                        statusMessage = "Faltam \(leftTime) minutos para o atendimento"
                     }
                     
                 case 3600...12*60*60:

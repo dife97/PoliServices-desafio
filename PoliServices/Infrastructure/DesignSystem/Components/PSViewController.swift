@@ -8,10 +8,6 @@ class PSViewController: UIViewController {
         return loadingView
     }()
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-    
     func configureLoadingView() {
         view.addSubview(loadingView)
         
@@ -28,5 +24,20 @@ class PSViewController: UIViewController {
     func stopLoading() {
         loadingView.stopLoading()
         loadingView.removeFromSuperview()
+    }
+    
+    func showAlert(
+        title: String,
+        message: String,
+        action: (() -> Void)?
+    ) {
+        let alertController = UIAlertController(
+            title: title,
+            message: message,
+            preferredStyle: .alert
+        )
+        let alertAction = UIAlertAction(title: "Ok", style: .default) { _ in action?() }
+        alertController.addAction(alertAction)
+        present(alertController, animated: true)
     }
 }

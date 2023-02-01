@@ -1,7 +1,7 @@
 class RemotePoliServicesList: PoliServicesList {
     
-    private var httpGetClient: HttpGetClient
-    var urlString = "https://9a1c098c-8f75-47ad-a938-ad3f9179490a.mock.pstmn.io/services"
+    private let httpGetClient: HttpGetClient
+    private let urlString = "https://9a1c098c-8f75-47ad-a938-ad3f9179490a.mock.pstmn.io/services"
     
     init(httpGetClient: HttpGetClient) {
         self.httpGetClient = httpGetClient
@@ -10,10 +10,11 @@ class RemotePoliServicesList: PoliServicesList {
     func getPoliServicesList(onComplete: @escaping (Result<PoliServices, PSError>) -> Void) {
         
         httpGetClient.get(from: urlString) { result in
+            
             switch result {
             case .success(let data):
                 guard let remotePoliServices = data.decode(to: RemotePoliServiceModel.self) else {
-                    // TODO: implement PSError
+                    onComplete(.failure(.failedToDecodeData))
                     return
                 }
                 
@@ -21,7 +22,6 @@ class RemotePoliServicesList: PoliServicesList {
                     var poliServices: PoliServices = []
                     
                     for remotePoliService in remotePoliServices.data {
-                        
                         let poliService = PoliServiceModel(
                             name: remotePoliService.name,
                             icon: remotePoliService.icon,
@@ -34,15 +34,11 @@ class RemotePoliServicesList: PoliServicesList {
                     
                     onComplete(.success(poliServices))
                 } else {
-                    // TODO: implement PSError
-                    print("")
+                    onComplete(.failure(.responseError))
                 }
-            case .failure(_):
-                // TODO: implement PSError
-                print("")
+            case .failure(let error):
+                onComplete(.failure(.networkError(message: error.localizedDescription)))
             }
         }
     }
-    
-    
 }

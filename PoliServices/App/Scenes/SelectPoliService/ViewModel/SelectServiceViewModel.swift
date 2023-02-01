@@ -10,13 +10,9 @@ class SelectServiceViewModel: SelectServiceViewModelProtocol {
     
     weak var delegate: SelectPoliServiceViewDelegate?
     
-    
-    
-    
-    
     func getPoliServicesList() {
         poliServicesList.getPoliServicesList { [weak self] result in
-            guard let self else { return } //TODO: implement error?
+            guard let self else { return }
             
             switch result {
             case .success(let poliServices):

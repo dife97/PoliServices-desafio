@@ -4,7 +4,6 @@ class URLSessionGetClient: HttpGetClient {
     
     private let urlSession: URLSession
     private var urlRequestAdapter: URLSessionRequestAdapter?
-//    private let urlRequestAdapter: URLSessionRequest?
     
     init(
         urlSession: URLSession = URLSession.shared
@@ -12,7 +11,7 @@ class URLSessionGetClient: HttpGetClient {
         self.urlSession = urlSession
     }
     
-    func get(from urlString: String, onComplete: @escaping (Result<Data, Error>) -> Void) {
+    func get(from urlString: String, onComplete: @escaping (Result<Data, PSError>) -> Void) {
         
         let urlRequest = URLSessionRequestAdapter(
             method: .get,
@@ -22,21 +21,22 @@ class URLSessionGetClient: HttpGetClient {
         urlSession.dataTask(with: urlRequest) { data, urlResponse, error in
             if error == nil {
                 guard let urlResponse = urlResponse as? HTTPURLResponse else {
-                    // TODO: implement error
+                    onComplete(.failure(.failedToGetHttpUrlResponse))
                     return
                 }
                 
                 guard let data else {
-                    // TODO: implement error
+                    onComplete(.failure(.missingData))
                     return
                 }
                 
                 if 200..<300 ~= urlResponse.statusCode {
                     onComplete(.success(data))
-                    return
+                } else {
+                    onComplete(.failure(.httpError(statusCode: urlResponse.statusCode)))
                 }
-                
-                // TODO: implement error
+            } else {
+                onComplete(.failure(.networkError(message: error!.localizedDescription)))
             }
         }.resume()
     }

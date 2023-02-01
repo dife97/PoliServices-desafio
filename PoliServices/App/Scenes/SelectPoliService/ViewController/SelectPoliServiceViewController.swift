@@ -106,6 +106,15 @@ extension SelectPoliServiceViewController: SelectPoliServiceViewDelegate {
     
     func failedToGetPoliServicesList() {
         
+        DispatchQueue.main.async { [weak self] in 
+            guard let self else { return }
+            self.stopLoading()
+            self.showAlert(
+                title: "Oops",
+                message: "Não foi possível carregar os PoliServices disponíveis.\n\nPor favor, tente novamente.") {
+                    self.dismiss(animated: true)
+            }
+        }
     }
 }
 

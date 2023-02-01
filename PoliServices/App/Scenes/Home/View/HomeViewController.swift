@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
+class HomeViewController: PSViewController {
 
     private let viewModel: HomeViewModelProtocol
     

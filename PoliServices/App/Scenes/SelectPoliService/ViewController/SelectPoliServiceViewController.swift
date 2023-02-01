@@ -7,13 +7,12 @@
 
 import UIKit
 
-class SelectPoliServiceViewController: UIViewController {
+class SelectPoliServiceViewController: PSViewController {
 
     private let viewModel: SelectServiceViewModelProtocol
     
     init(viewModel: SelectServiceViewModelProtocol) {
         self.viewModel = viewModel
-        
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -24,20 +23,22 @@ class SelectPoliServiceViewController: UIViewController {
     private lazy var selectServiceView: SelectServiceView = {
         let view = SelectServiceView()
         view.configureCollectionView(delegate: self, dataSource: self)
-
         return view
     }()
 
     override func loadView() {
-        
         view = selectServiceView
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         configureNavigationBar()
         viewModel.getPoliServicesList()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        startLoading()
     }
     
     private func configureNavigationBar() {
@@ -63,9 +64,7 @@ extension SelectPoliServiceViewController: UICollectionViewDelegate {
                         didSelectItemAt indexPath: IndexPath) {
         
         let poliService = viewModel.poliServices[indexPath.row]
-        
         let selectDateViewController = selectDateViewControllerFactory(poliService: poliService)
-
         navigationController?.pushViewController(selectDateViewController, animated: true)
     }
 }
@@ -100,6 +99,7 @@ extension SelectPoliServiceViewController: SelectPoliServiceViewDelegate {
     func didGetPoliServicesList() {
         DispatchQueue.main.async { [weak self] in
             guard let self else { return }
+            self.stopLoading()
             self.selectServiceView.updateSelectServicesCollectionView()
         }
     }
@@ -111,7 +111,7 @@ extension SelectPoliServiceViewController: SelectPoliServiceViewDelegate {
 
 extension SelectPoliServiceViewController {
     
-    func selectDateViewControllerFactory(poliService: PoliServiceModel) -> UIViewController {
+    func selectDateViewControllerFactory(poliService: PoliServiceModel) -> PSViewController {
         
         let poliServiceModel = PoliServiceModel(
             name: poliService.name,
@@ -119,7 +119,6 @@ extension SelectPoliServiceViewController {
             color: poliService.color,
             duration: poliService.duration
         )
-        
         let selectDateViewModel = SelectDateViewModel(poliService: poliServiceModel)
         let selectDateViewController = SelectDateViewController(viewModel: selectDateViewModel)
         selectDateViewModel.delegate = selectDateViewController
@@ -134,9 +133,9 @@ extension SelectPoliServiceViewController {
             withReuseIdentifier: ServiceCollectionViewCell.identifier,
             for: indexPath
         )
-        
+
         let poliService = viewModel.poliServices[indexPath.row]
-        
+
         guard
             let serviceCollectionViewCell = cell as? ServiceCollectionViewCell
         else {

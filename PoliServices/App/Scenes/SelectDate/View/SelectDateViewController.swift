@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SelectDateViewController: UIViewController {
+class SelectDateViewController: PSViewController {
     
     private let viewModel: SelectDateViewModelProtocol
     

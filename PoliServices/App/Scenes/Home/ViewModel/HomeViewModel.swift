@@ -2,23 +2,18 @@ import Foundation
 
 class HomeViewModel: HomeViewModelProtocol {
     
-    var currentDate: CurrentDate
-    var timer: PSTimer = FoundationPSTimer()
+    var providers: HomeViewModelProviders
     weak var delegate: HomeViewModelDelegate?
     weak var scheduledServiceDelegate: ScheduledServiceDelegate?
     
-    init(
-        currentDateProvider: CurrentDate,
-        timerProvider: PSTimer
-    ) {
-        self.currentDate = currentDateProvider
-        self.timer = timerProvider
+    init(providers: HomeViewModelProviders) {
+        self.providers = providers
     }
     
-    func getDescriptionLabel(_ completion: (String) -> Void) {
-        
-        let descriptionText = DescriptionModel.description
-        completion(descriptionText)
+    func getAboutUsDescription() {
+        providers.aboutUs.getAboutUsDescription { description in
+            delegate?.didGetAboutUs(descriptionText: description)
+        }
     }
 }
 
@@ -26,8 +21,7 @@ class HomeViewModel: HomeViewModelProtocol {
 extension HomeViewModel {
     
     func getCurrentDate() {
-        
-        currentDate.getCurrentDate { [unowned self] currentDate in
+        providers.currentDate.getCurrentDate { [unowned self] currentDate in
             
             guard let currentDate else {
                 self.delegate?.failedToGetCurrentDate()
@@ -45,8 +39,7 @@ extension HomeViewModel {
 extension HomeViewModel {
     
     func startTimer(duration: Double) {
-
-        timer.start(duration: duration) { [weak self] in
+        providers.psTimer.start(duration: duration) { [weak self] in
             
             guard let self = self else { return }
             self.checkScheduledPoliService()
@@ -57,7 +50,6 @@ extension HomeViewModel {
 extension HomeViewModel: ScheduledServiceProtocol {
     
     func checkScheduledPoliService() {
-        
         // TODO: add an use case that know how to retrieve data from a local repository
         let deadline = UserDefaults.standard.double(forKey: PoliServiceKeys.duration.rawValue)
 

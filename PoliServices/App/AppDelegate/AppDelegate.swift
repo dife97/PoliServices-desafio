@@ -24,13 +24,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     private func homeFactory() -> UINavigationController {
         
-        let currentDateProvider = FoundationCurrentDate()
-        let timerProvider = FoundationPSTimer()
-        let homeViewModel = HomeViewModel(currentDateProvider: currentDateProvider, timerProvider: timerProvider)
+        let homeViewModel = HomeViewModel(providers: getHomeViewModelProviders())
         let homeViewController = HomeViewController(viewModel: homeViewModel)
         homeViewModel.delegate = homeViewController
         homeViewModel.scheduledServiceDelegate = homeViewController
         
         return UINavigationController(rootViewController: homeViewController)
+    }
+    
+    private func getHomeViewModelProviders() -> HomeViewModelProviders {
+        
+        let providers = HomeViewModelProviders(
+            currentDate: FoundationCurrentDate(),
+            aboutUs: DefaultAboutUs(),
+            psTimer: FoundationPSTimer()
+        )
+        
+        return providers
     }
 }

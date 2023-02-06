@@ -3,16 +3,17 @@ protocol HomeViewModelProtocol: ScheduledServiceProtocol {
     // MARK: - Delegate
     var delegate: HomeViewModelDelegate? { get }
     
+    // MARK: - Providers
+    var providers: HomeViewModelProviders { get }
+    
     // MARK: - CurrentDate
-    var currentDate: CurrentDate { get }
     func getCurrentDate()
     
     // MARK: - Timer
-    var timer: PSTimer { get }
     func startTimer(duration: Double)
     
-    // MARK: - Description Label
-    func getDescriptionLabel(_ completion: (String) -> Void)
+    // MARK: - About Us Description
+    func getAboutUsDescription()
 }
 
 protocol HomeViewModelDelegate: AnyObject {
@@ -20,6 +21,9 @@ protocol HomeViewModelDelegate: AnyObject {
     // MARK: - CurrentDate
     func didGet(_ currentDate: String)
     func failedToGetCurrentDate()
+    
+    // MARK: - About Us Description
+    func didGetAboutUs(descriptionText: String)
 }
 
 

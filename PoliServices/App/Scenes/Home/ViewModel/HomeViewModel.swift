@@ -35,12 +35,12 @@ extension HomeViewModel {
     }
 }
 
-//MARK: - PSTimer
+//MARK: - Countdown
 extension HomeViewModel {
     
     func startTimer(duration: Double) {
         
-        providers.psTimer.start(duration: duration) { [weak self] in
+        providers.countdown.start(duration: duration) { [weak self] in
             guard let self = self else { return }
             self.checkScheduledPoliService()
         }

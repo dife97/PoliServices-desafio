@@ -1,6 +1,6 @@
 import Foundation
 
-class FoundationPSTimer: PSTimer {
+class PSCountdown: Countdown {
     
     func start(duration: Double, action: @escaping () -> Void) {
 

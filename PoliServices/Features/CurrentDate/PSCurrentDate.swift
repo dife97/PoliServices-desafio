@@ -1,6 +1,6 @@
 import Foundation
 
-class FoundationCurrentDate: CurrentDate {
+class PSCurrentDate: CurrentDate {
     
     func getCurrentDate(onComplete: (CurrentDateModel?) -> Void) {
         
@@ -11,7 +11,7 @@ class FoundationCurrentDate: CurrentDate {
         guard
             let day = dateComponents.day,
             let month = dateComponents.month,
-            let monthString = PSMonth.brazilian[month],
+            let monthString = MonthModel.brazilian[month],
             let year = dateComponents.year
         else {
             onComplete(nil)

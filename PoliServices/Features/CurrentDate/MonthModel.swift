@@ -1,4 +1,4 @@
-struct PSMonth {
+struct MonthModel {
     static let brazilian: [Int: String] = [
         1: "Janeiro",
         2: "Fevereiro",

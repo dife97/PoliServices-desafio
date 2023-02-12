@@ -37,9 +37,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private func getHomeViewModelProviders() -> HomeViewModelProviders {
         
         let providers = HomeViewModelProviders(
-            currentDate: FoundationCurrentDate(),
+            currentDate: PSCurrentDate(),
             aboutUs: DefaultAboutUs(),
-            psTimer: FoundationPSTimer()
+            countdown: PSCountdown()
         )
         
         return providers

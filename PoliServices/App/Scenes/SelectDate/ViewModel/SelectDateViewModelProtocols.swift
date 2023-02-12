@@ -4,6 +4,7 @@ protocol SelectDateViewModelProtocol {
     var poliService: PoliServiceModel { get }
     
     func saveService(timeIntervalSince1970: Double)
+    func registerPushNotification(for timeIntervalSince1970: Double)
 }
 
 protocol SelectDateViewDelegate: AnyObject {

@@ -128,7 +128,9 @@ extension SelectPoliServiceViewController {
             color: poliService.color,
             duration: poliService.duration
         )
-        let selectDateViewModel = SelectDateViewModel(poliService: poliServiceModel)
+        let selectDateViewModel = SelectDateViewModel(poliService: poliServiceModel,
+                                                      pushNotificationProvider: PSLocalPushNotification())
+        
         let selectDateViewController = SelectDateViewController(viewModel: selectDateViewModel)
         selectDateViewModel.delegate = selectDateViewController
         
@@ -145,9 +147,7 @@ extension SelectPoliServiceViewController {
 
         let poliService = viewModel.poliServices[indexPath.row]
 
-        guard
-            let serviceCollectionViewCell = cell as? ServiceCollectionViewCell
-        else {
+        guard let serviceCollectionViewCell = cell as? ServiceCollectionViewCell else {
             return ServiceCollectionViewCell()
         }
         

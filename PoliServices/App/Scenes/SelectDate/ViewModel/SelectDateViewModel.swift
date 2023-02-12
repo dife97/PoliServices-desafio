@@ -5,9 +5,14 @@ class SelectDateViewModel: SelectDateViewModelProtocol {
     private let userDefaults = UserDefaults.standard
     var delegate: SelectDateViewDelegate?
     var poliService: PoliServiceModel
+    var pushNotificationProvider: LocalPushNotification
     
-    init(poliService: PoliServiceModel) {
+    init(
+        poliService: PoliServiceModel,
+        pushNotificationProvider: LocalPushNotification
+    ) {
         self.poliService = poliService
+        self.pushNotificationProvider = pushNotificationProvider
     }
     
     func saveService(timeIntervalSince1970: Double) {
@@ -30,7 +35,32 @@ class SelectDateViewModel: SelectDateViewModelProtocol {
         userDefaults.set(poliService.icon,
                          forKey: PoliServiceKeys.icon.rawValue)
         
+        registerPushNotification(for: timeIntervalSince1970)
         
         delegate?.didSavePoliService()
+    }
+    
+    func registerPushNotification(for timeIntervalSince1970: Double) {
+        
+        let title = "Hey, está quase na hora!"
+        let body = "Faltam 15 minutos para o seu atendimento de \(poliService.name)"
+        
+        let pushNotification = PushNotificationModel(
+            identifier: poliService.name,
+            title: title,
+            body: body,
+            timeInterval: calculatePushNotificationTimeInterval(for: timeIntervalSince1970)
+        )
+        
+        pushNotificationProvider.register(pushNotification)
+    }
+    
+    func calculatePushNotificationTimeInterval(for timeIntervalSince1970: Double) -> Double {
+        
+        let fifteenMinutes: Double = 15 * 60
+        let now = Date().timeIntervalSince1970
+        let notificationTime = timeIntervalSince1970 - now - fifteenMinutes
+        
+        return notificationTime
     }
 }

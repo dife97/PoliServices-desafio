@@ -35,13 +35,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     private func getHomeViewModelProviders() -> HomeViewModelProviders {
-        
         let providers = HomeViewModelProviders(
             currentDate: PSCurrentDate(),
             aboutUs: DefaultAboutUs(),
             countdown: PSCountdown()
         )
-        
         return providers
     }
 }

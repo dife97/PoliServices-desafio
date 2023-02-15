@@ -40,6 +40,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             aboutUs: DefaultAboutUs(),
             countdown: PSCountdown()
         )
+        
         return providers
     }
 }
